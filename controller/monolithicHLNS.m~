@@ -1,0 +1,284 @@
+%clear all;
+close all;
+% rosshutdown;
+% rosinit('localhost');
+
+addpath('src') %
+
+
+
+t1=tic;
+
+ABSfoldName=foldName;
+fsm=['fsmdataIncremental' runningScenario];
+
+run(['../FSMs/' ABSfoldName '/userdata' num2str(runningScenario) '.m'])       %Import userdata from FSM GUI
+run(['../FSMs/' ABSfoldName '/' fsm '.m'])       %Import FSM data from FSM GUI
+%run(['../FSMs/' foldName '/' fsmInc '.m' ])
+
+EEC = 0;
+
+step_through_final = false;
+step_through_local = false;
+init_cost = zeros(1,numRobots);
+
+
+[~,num_fsms] = size(states_incr);
+event_list = createEventFsmList(events_incr,num_fsms);
+cur_states = initial_state_incr;
+state_path = cur_states;
+
+
+old_start=start_loc;
+
+clear start_loc;
+
+for i=1:numRobots                              %Update Robot Locations
+    %robot{i} = updateLocations(robot{i});
+    start_loc(i,1) = old_start{i,1};%robot{i}.X;
+    start_loc(i,2) = old_start{i,2};%robot{i}.Y;
+end
+
+robotLocations = NaN(numRobots,2);
+
+% Stores the robots current tasks to send to localDijkstra
+robot_tasks = num2cell(NaN(1,numRobots));
+
+% Need to send robots current location to Dijkstra
+for kk = 1:numRobots
+    robotLocations(kk,1) = start_loc(i,1);
+    robotLocations(kk,2) = start_loc(i,2);
+    %                     robot_tasks{kk} = robot{kk}.cur_task(4:end);
+end
+
+abstracted=true;
+start_events_only=true;
+
+
+pairTasks=numTasks/2;
+
+
+% plans_abs=cell(sizePop,pairTasks);
+
+j=0;
+[cost_final,path_state,path_events,solutionRobots,solutionRobotCost]=GreedyTasksInitialSolution(cur_states,numRobots,states_incr,events_incr,tasks,...
+    regions,numRegions,start_loc,numTasks,abstracted,start_events_only,robot_tasks); %,robotLocations,robot_tasks
+
+
+
+MaxRep=numTasks*3/2;
+
+%coisas que eu tenho que fazer
+% 1- criar solucao inicial - Fazer com Greedy
+% 2- criar os metodos de remocao
+% 3- criar os metodos de insercao
+% 4- criar roulete wheel para decidir qual metodo vai ser escolhido
+% 5- criar metodos de otimizacao- Local Search
+% A solucao vai ser um cell array com uma posicao para cada robo?
+% ou eu devo fazer uma matriz, acho q vou fazer matriz para evitar
+% converter de string para numero
+%
+
+%metodos de remocao: Random, Worst Task, Last Task, Worst Robot
+%metodos de insercao: Random, Greedy, Regret
+%decidi nao fazer local search
+
+iterMax=300000; %maximum number of iterations
+Tstart=(cost_final - 1.65*cost_final)/log(0.5);
+% Tstart=150; %initial temperature Simulated Annealing
+
+%segment=10; %segment size
+%rateW=0.7; %rate of updating weights
+%stopCond=270; %maximum number of iterations with the same solution
+dSA=0.9999;%(0.01/Tstart)^(10/stopCond); %decrease rate Simulated Annealing
+Temp=Tstart;
+prizeBest=10;
+prizeBetter=5;
+prizeChosen=3;
+%initiates with the initial solution
+robotsCost=zeros(1,numRobots);
+for i=1:numRobots
+    robotsCost(i)=sum(solutionRobotCost{i});
+end
+bestCost=cost_final;%max(robotsCost);
+bestRobotsCost=solutionRobotCost;
+bestSolution=solutionRobots;
+
+%initiates with the initial solution
+segmentBestCost=bestCost;
+segmentBestRobotsCost=bestRobotsCost;
+segmentBestSolution=bestSolution;
+
+%initialize the probabilities of methods for the roulette wheel
+weightRemove=ones(1,4);
+weightInsert=ones(1,3);
+
+probRemove=1/4;
+probInsert=1/3;
+
+
+scoreRemove=zeros(1,4);
+scoreInsert=zeros(1,3);
+
+probMethodsRemove=zeros(1,4);
+probMethodsInsert=zeros(1,3);
+
+%first elements
+probMethodsRemove(1)=probRemove*weightRemove(1);
+probMethodsInsert(1)=probInsert*weightInsert(1);
+
+
+for i=2:4
+    probMethodsRemove(i)=probRemove*weightRemove(i)+probMethodsRemove(i-1);
+    if i<4
+        probMethodsInsert(i)=probInsert*weightInsert(i)+probMethodsInsert(i-1);
+    end
+end
+
+%initialize the counter to how many times each method is used in a segment
+usedMethodRemove=zeros(1,4);
+usedMethodInsert=zeros(1,3);
+
+numIter=0; %counter to the number of iterations
+
+numBest=0; %counter to how many times the best solution is kept
+
+numRemove=ceil(0.3*numTasks);
+
+while numBest < stopCond && numIter < iterMax
+    
+    numIter=numIter+1;
+    
+    chooseRemove=rand;
+    
+    for iR=1:4
+        if chooseRemove <= probMethodsRemove(iR)
+            break;
+        end
+    end
+    removeTasks=[];
+    switch iR
+        case 1
+            [removeSolution, removeTasks, removeCost] = destroyRandom(segmentBestSolution,segmentBestRobotsCost,numRemove,numTasks,numRobots,tasks,start_loc);
+        case 2
+            [removeSolution, removeTasks, removeCost] = destroyWorstTask(segmentBestSolution,segmentBestRobotsCost,numRemove,numTasks,numRobots,tasks,start_loc);
+        case 3
+            [removeSolution, removeTasks, removeCost] = destroyLastTask(segmentBestSolution,segmentBestRobotsCost,numRobots);
+        case 4
+            [removeSolution, removeTasks, removeCost] = destroyWorstRobot(segmentBestSolution,segmentBestRobotsCost,numRobots);
+    end
+    
+    usedMethodRemove(iR)=usedMethodRemove(iR)+1;%update the number of times the method was used
+    
+    chooseInsert=rand;
+    
+    for iT=1:3
+        if chooseInsert <= probMethodsInsert(iT)
+            break;
+        end
+    end
+    
+    switch iT
+        case 1
+            [newSolution,newCost] = InsertRandom(removeTasks,removeSolution,removeCost,numRobots,tasks,start_loc);
+        case 2
+            [newSolution,newCost] = InsertGreedyandRegret(0, removeTasks,removeSolution,removeCost,numRobots,tasks,start_loc);
+        case 3
+            [newSolution,newCost] = InsertGreedyandRegret(1, removeTasks,removeSolution,removeCost,numRobots,tasks,start_loc);
+    end
+    
+    usedMethodInsert(iT)=usedMethodInsert(iT)+1;%update the number of times the method was used
+    
+    
+    for i=1:numRobots
+        robotsCost(i)=sum(newCost{i});
+        
+        testzero=find(newCost{i}==0, 1);
+        
+        if ~isempty(testzero)
+            ju=1
+        end
+        
+    end
+    
+    [finalPlan, newOverallCost] = testPlanDesiredTasks(newSolution,cur_states,states_incr,event_list,num_fsms,numRobots,start_loc,tasks,regions,numRegions,numTasks,abstracted,start_events_only,robot_tasks,events_incr);
+    
+    %     newOverallCost=max(robotsCost); %cost of the new solution
+    
+    if newOverallCost <= segmentBestCost
+        segmentBestCost=newOverallCost;
+        segmentBestSolution=newSolution;
+        segmentBestRobotsCost=newCost;
+        if newOverallCost < bestCost
+            bestCost=newOverallCost;
+            bestSolution=newSolution;
+            bestRobotsCost=newCost;
+            scoreRemove(iR)=scoreRemove(iR)+ prizeBest;
+            scoreInsert(iT)=scoreInsert(iT)+prizeBest;
+            numBest=0;
+            
+        else
+            scoreRemove(iR)=scoreRemove(iR)+ prizeBetter;
+            scoreInsert(iT)=scoreInsert(iT)+prizeBetter;
+            numBest=numBest+1;
+        end
+    else
+        %Here, we are going to apply Simulated Annealing
+        probSA=exp((segmentBestCost-newOverallCost)/Temp);
+        accept=rand;
+        
+        if accept <=probSA
+            segmentBestCost=newOverallCost;
+            segmentBestSolution=newSolution;
+            segmentBestRobotsCost=newCost;
+            scoreRemove(iR)=scoreRemove(iR)+ prizeChosen;
+            scoreInsert(iT)=scoreInsert(iT)+prizeChosen;
+        end
+        
+        numBest=numBest+1;
+    end
+    
+    if mod(numIter,segment)==0 %After each segment updates the probabilities for the Methods
+        
+        for i=1:4
+            if usedMethodRemove(i)> 0
+                weightRemove(i)=rateW*(scoreRemove(i)/usedMethodRemove(i))+(1-rateW)*weightRemove(i);
+            end
+            if i<4
+                if usedMethodInsert(i) > 0
+                    weightInsert(i)=rateW*(scoreInsert(i)/usedMethodInsert(i))+(1-rateW)*weightInsert(i);
+                end
+            end
+        end
+        fullRemove=sum(weightRemove);
+        fullInsert=sum(weightInsert);
+        probMethodsRemove(1)=weightRemove(1)/fullRemove;
+        probMethodsInsert(1)=weightInsert(1)/fullInsert;
+        for i=2:4
+            probMethodsRemove(i)=(weightRemove(i)/fullRemove)+probMethodsRemove(i-1);
+            if i<4
+                probMethodsInsert(i)=(weightInsert(i)/fullInsert)+probMethodsInsert(i-1);
+            end
+        end
+        usedMethodRemove=zeros(1,4);
+        usedMethodInsert=zeros(1,3);
+        scoreRemove=zeros(1,4);
+        scoreInsert=zeros(1,3);
+    end
+    
+    Temp=Temp*dSA; % decrease the temperature for Simulated Annealing
+    if mod(numIter,stopCond/30)==0
+        Temp=Tstart;
+    end
+    
+end
+tf=toc(t1);
+[finalPlan, PlanCost] = testPlanDesiredTasks(bestSolution,cur_states,states_incr,event_list,num_fsms,numRobots,start_loc,tasks,regions,numRegions,numTasks,abstracted,start_events_only,robot_tasks,events_incr);
+table(i_t,1)=tf;
+table(i_t,2)=bestCost;
+table(i_t,3)=PlanCost;
+
+time = datestr(datetime);
+
+csvwrite(['../LogsAll/LargeNeighborTasks_results_log_' time(1:11) '_' time(13:14) '_' time(16:17) '.csv'],table);
+
