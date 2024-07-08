@@ -1,0 +1,6 @@
+  Offline Trial 13: 
+Optimization Time: 1.743043 sec
+Costs:   11.7276 13.3087 
+State Path:   1 3 1232 1134 850 786 561 127 562 563 564 185 186 575 572 191 190 111 
+Event Path:   a03s b01s a09e b05e a03f a04s b01f a08e b10e a07e a04f a06e b09e b08e b02s a07e b02f 
+

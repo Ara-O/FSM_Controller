@@ -1,0 +1,66 @@
+  Offine Trial 50: 
+Optimization Time: 0.035480 sec
+Costs:   54.9762 54.9762 
+State Path:   1 2 34 29 24 48 54 55 7 
+Event Path:   b3s a1s b3f b4s a1f a2s b4f a2f 
+
+  Offine Trial 51: 
+Optimization Time: 0.012462 sec
+Costs:   35.5209 35.5209 
+State Path:   1 3 40 41 10 20 15 6 7 
+Event Path:   a3s b1s a3f a4s b1f b2s b2f a4f 
+
+  Offine Trial 52: 
+Optimization Time: 0.012498 sec
+Costs:   49.733 49.733 
+State Path:   1 3 40 41 10 20 15 6 7 
+Event Path:   a3s b1s a3f a4s b1f b2s b2f a4f 
+
+  Offine Trial 53: 
+Optimization Time: 0.011517 sec
+Costs:   46.8271 46.8271 
+State Path:   1 5 40 39 36 14 15 6 7 
+Event Path:   b1s a3s b1f b2s a3f a4s b2f a4f 
+
+  Offine Trial 54: 
+Optimization Time: 0.009097 sec
+Costs:   32.5983 32.5983 
+State Path:   1 5 40 39 36 14 16 6 7 
+Event Path:   b1s a3s b1f b2s a3f b2f a4s a4f 
+
+  Offine Trial 55: 
+Optimization Time: 0.010178 sec
+Costs:   36.3687 36.3687 
+State Path:   1 5 40 39 36 14 15 6 7 
+Event Path:   b1s a3s b1f b2s a3f a4s b2f a4f 
+
+  Offine Trial 56: 
+Optimization Time: 0.011186 sec
+Costs:   27.4666 27.4666 
+State Path:   1 4 34 27 18 46 54 55 7 
+Event Path:   a1s b3s a1f a2s b3f b4s b4f a2f 
+
+  Offine Trial 57: 
+Optimization Time: 0.011210 sec
+Costs:   40.2829 40.2829 
+State Path:   1 5 40 39 36 14 15 6 7 
+Event Path:   b1s a3s b1f b2s a3f a4s b2f a4f 
+
+  Offine Trial 58: 
+Optimization Time: 0.010209 sec
+Costs:   32.2784 32.2784 
+State Path:   1 5 40 39 36 14 15 6 7 
+Event Path:   b1s a3s b1f b2s a3f a4s b2f a4f 
+
+  Offine Trial 59: 
+Optimization Time: 0.006926 sec
+Costs:   36.8502 36.8502 
+State Path:   1 3 40 41 10 20 15 6 7 
+Event Path:   a3s b1s a3f a4s b1f b2s b2f a4f 
+
+  Offine Trial 60: 
+Optimization Time: 0.011684 sec
+Costs:   31.9743 31.9743 
+State Path:   1 3 40 41 10 20 15 6 7 
+Event Path:   a3s b1s a3f a4s b1f b2s b2f a4f 
+

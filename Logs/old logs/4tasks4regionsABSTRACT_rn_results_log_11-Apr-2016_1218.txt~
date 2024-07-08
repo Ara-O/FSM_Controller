@@ -1,0 +1,90 @@
+  Trial 22: 
+Optimization Time: 0.005158 sec
+Elapsed Time: 104.874522 sec
+Abstracted Costs:   27.5127 41.9349 
+Abstracted State Path:   1 3 8 6 7 
+Abstracted Event Path:   a3s b1s a4s b2s 
+Overall State Path: 1 2 6 15 35 68 111 175 246 333 405 488 476 
+Overall Event Path: a3s b1s a6e b5e a3f a4s b1f a4f b2s b8e b7e b2f 
+
+
+  Trial 23: 
+Optimization Time: 0.005061 sec
+Elapsed Time: 153.578925 sec
+Abstracted Costs:   49.4149 21.5241 
+Abstracted State Path:   1 5 14 16 7 
+Abstracted Event Path:   b3s a1s b4s a2s 
+Overall State Path: 1 5 10 25 58 96 157 217 305 373 458 516 476 
+Overall Event Path: b3s a1s a1f b7e b6e b3f b4s a2s a8e a7e a2f b4f 
+
+
+  Trial 24: 
+Optimization Time: 0.005665 sec
+Elapsed Time: 99.473835 sec
+Abstracted Costs:   38.7301 29.7476 
+Abstracted State Path:   1 2 14 11 7 
+Abstracted Event Path:   a1s b3s a2s b4s 
+Overall State Path: 1 3 10 25 59 95 156 215 302 371 459 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e a8e b6e a7e b3f a2f b4s b4f 
+
+
+  Trial 25: 
+Optimization Time: 0.005093 sec
+Elapsed Time: 100.404832 sec
+Abstracted Costs:   32.3665 28.7609 
+Abstracted State Path:   1 4 8 12 7 
+Abstracted Event Path:   b1s a3s b2s a4s 
+Overall State Path: 1 4 6 15 35 68 112 177 249 337 406 488 476 
+Overall Event Path: b1s a3s a6e b5e a3f b1f b2s b8e b7e a4s a4f b2f 
+
+
+  Trial 26: 
+Optimization Time: 0.005282 sec
+Elapsed Time: 115.296692 sec
+Abstracted Costs:   45.8095 39.1905 
+Abstracted State Path:   1 4 8 12 7 
+Abstracted Event Path:   b1s a3s b2s a4s 
+Overall State Path: 1 4 6 15 35 68 112 177 249 334 406 488 476 
+Overall Event Path: b1s a3s a6e b5e a3f b1f b2s b8e a4s b7e a4f b2f 
+
+
+  Trial 27: 
+Optimization Time: 0.007163 sec
+Elapsed Time: 134.923033 sec
+Abstracted Costs:   39.3662 44.8461 
+Abstracted State Path:   1 2 14 11 7 
+Abstracted Event Path:   a1s b3s a2s b4s 
+Overall State Path: 1 3 10 25 59 95 156 215 302 371 459 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e a8e b6e a7e b3f a2f b4s b4f 
+
+
+  Trial 28: 
+Optimization Time: 0.005505 sec
+Elapsed Time: 126.412252 sec
+Abstracted Costs:   37.6269 33.3062 
+Abstracted State Path:   1 2 14 11 7 
+Abstracted Event Path:   a1s b3s a2s b4s 
+Overall State Path: 1 3 10 25 59 95 156 215 302 371 459 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e a8e b6e a7e b3f a2f b4s b4f 
+
+
+  Trial 29: 
+Optimization Time: 0.005442 sec
+Elapsed Time: 103.506079 sec
+Abstracted Costs:   38.1404 31.5516 
+Abstracted State Path:   1 4 8 12 7 
+Abstracted Event Path:   b1s a3s b2s a4s 
+Overall State Path: 1 4 6 15 35 68 112 177 249 334 406 488 476 
+Overall Event Path: b1s a3s a6e b5e a3f b1f b2s b8e a4s b7e a4f b2f 
+
+
+  Trial 30: 
+Optimization Time: 0.005051 sec
+Elapsed Time: 117.516444 sec
+Abstracted Costs:   37.6319 37.6929 
+Abstracted State Path:   1 4 8 12 7 
+Abstracted Event Path:   b1s a3s b2s a4s 
+Overall State Path: 1 4 6 15 35 68 112 177 247 334 405 488 476 
+Overall Event Path: b1s a3s a6e b5e a3f b1f b2s a4s b8e a4f b7e b2f 
+
+

@@ -1,0 +1,81 @@
+  Trial 60: 
+Optimization Time: 4.604206 sec
+Elapsed Time: 131.827804 sec
+Abstracted Costs:   59.4298 58.0155 66.3771 
+Abstracted State Path:   1 14 754 2162 2544 1334 614 1269 742 1697 657 
+Abstracted Event Path:   c05s b03s a01s c09s b04s a02s c06s c10s a07s a08s 
+Overall State Path:   1 14 31881 49926 48546 50538 40135 52738 41357 52823 51329 52369 51489 51799 23763 51824 23769 21862 23875 21864 21875 
+Overall Event Path:   c05s b03s a01s c05f c09s b03f b04s a01f a02s c09f c06s c06f c10s a02f a07s a07f b04f a08s c10f a08f 
+
+  Trial 61: 
+Optimization Time: 4.720877 sec
+Elapsed Time: 123.311968 sec
+Abstracted Costs:   58.9898 35.5804 60.287 
+Abstracted State Path:   1 3 750 1675 1678 2812 651 1801 660 1804 657 
+Abstracted Event Path:   a03s c05s b07s a09s c01s c06s a04s b08s c02s a10s 
+Overall State Path:   1 3 31877 59027 32226 59054 57455 58524 57649 59233 34629 59234 34653 61434 34680 9359 34724 9741 27874 9750 21875 
+Overall Event Path:   a03s c05s b07s a03f a09s c05f c01s c01f c06s a09f a04s b07f b08s b08f a04f a10s c06f c02s a10f c02f 
+
+  Trial 62: 
+Optimization Time: 4.831444 sec
+Elapsed Time: 93.211731 sec
+Abstracted Costs:   46.2295 39.1584 43.6963 
+Abstracted State Path:   1 2 1466 2591 2340 736 739 2198 58 28 657 
+Abstracted Event Path:   a01s c09s b05s c07s a03s b06s c10s a04s c08s a02s 
+Overall State Path:   1 2 39876 54926 41156 14045 37174 54720 37216 56920 37474 17160 23466 56191 55839 57098 39552 57105 39575 18250 21875 
+Overall Event Path:   a01s c09s b05s a01f c09f c07s a03s b05f b06s a03f c07f c10s a04s c10f c08s a04f a02s b06f c08f a02f 
+
+  Trial 63: 
+Optimization Time: 4.592593 sec
+Elapsed Time: 124.837927 sec
+Abstracted Costs:   55.6315 55.6315 61.4625 
+Abstracted State Path:   1 14 749 209 2653 1333 613 137 2335 1062 657 
+Abstracted Event Path:   c05s a01s b07s c03s c09s a02s b08s c04s c10s c06s 
+Overall State Path:   1 14 31876 59026 57293 58738 57358 59340 41287 59425 41289 61625 41293 15438 31329 17865 21566 21568 21569 21570 21875 
+Overall Event Path:   c05s a01s b07s c05f c03s c03f c09s a01f a02s b07f b08s b08f c09f c04s c04f a02f c10s c10f c06s c06f 
+
+  Trial 64: 
+Optimization Time: 2.823800 sec
+Elapsed Time: 79.644364 sec
+Abstracted Costs:   39.9123 29.0957 37.6067 
+Abstracted State Path:   1 9 3051 1848 2628 920 1757 2199 58 28 657 
+Abstracted Event Path:   b05s c07s a09s b06s c03s a10s c04s a01s c08s a02s 
+Overall State Path:   1 9 35882 54628 35936 56828 55095 56539 28143 56541 55161 56691 30153 56694 30372 5409 38424 18192 39575 18250 21875 
+Overall Event Path:   b05s c07s a09s b05f b06s c07f c03s a09f a10s c03f c04s a10f a01s b06f c04f c08s a01f a02s c08f a02f 
+
+  Trial 65: 
+Optimization Time: 4.314517 sec
+Elapsed Time: 119.573329 sec
+Abstracted Costs:   46.4621 57.2788 52.363 
+Abstracted State Path:   1 15 2681 1048 3056 184 1482 2030 57 27 657 
+Abstracted Event Path:   c07s a01s b09s c03s a02s c04s b05s b06s c08s b10s 
+Overall State Path:   1 15 35876 63576 61680 62979 29184 63064 62324 63214 31189 54577 31362 56777 55897 57103 39572 21827 39875 21832 21875 
+Overall Event Path:   c07s a01s b09s c07f c03s a01f a02s c03f c04s b09f b05s b05f b06s c04f c08s b06f a02f b10s b10f c08f 
+
+  Trial 66: 
+Optimization Time: 4.114078 sec
+Elapsed Time: 121.298369 sec
+Abstracted Costs:   56.9134 50.9183 54.4764 
+Abstracted State Path:   1 10 199 208 723 215 402 117 20 28 657 
+Abstracted Event Path:   b07s a01s c03s b05s a09s b08s c04s a10s b06s a02s 
+Overall State Path:   1 10 57276 58726 27934 54345 28154 14571 29370 61031 60141 61181 31377 61183 31412 56802 31420 56805 31575 18250 21875 
+Overall Event Path:   b07s a01s c03s b07f b05s b05f a01f a09s b08s c03f c04s a09f a10s b08f b06s a10f a02s b06f c04f a02f 
+
+  Trial 67: 
+Optimization Time: 4.228936 sec
+Elapsed Time: 141.280940 sec
+Abstracted Costs:   53.9592 58.4924 49.9714 
+Abstracted State Path:   1 15 2681 2590 2340 736 740 1532 421 28 657 
+Abstracted Event Path:   c07s a01s b05s c09s a03s c08s b06s c10s a04s a02s 
+Overall State Path:   1 15 35876 54626 37156 14068 41162 55015 53477 54870 39216 57070 39474 17250 23477 56198 23552 56205 23575 18250 21875 
+Overall Event Path:   c07s a01s b05s a01f c07f c09s a03s c09f c08s b05f b06s a03f c08f c10s a04s a04f a02s b06f c10f a02f 
+
+  Trial 68: 
+Optimization Time: 4.924013 sec
+Elapsed Time: 118.606357 sec
+Abstracted Costs:   52.8327 52.3981 60.3626 
+Abstracted State Path:   1 2 2681 2590 912 2029 282 2109 1210 748 657 
+Abstracted Event Path:   a01s c07s b05s a02s c03s c04s b06s a09s a10s c08s 
+Overall State Path:   1 2 35876 54626 37156 54711 53468 54423 53533 54573 31355 56773 31726 56813 56063 57124 39858 21824 39874 21832 21875 
+Overall Event Path:   a01s c07s b05s a01f a02s c07f c03s c03f c04s b05f b06s a02f a09s c04f c08s a09f b06f a10s a10f c08f 
+

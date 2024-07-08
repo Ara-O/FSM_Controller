@@ -12,7 +12,7 @@ for i = 1:num_fsms
     num_transitions = size(states{i}{str2double(cur_state(i)),2});
     has_transition = false;
     % Checks the possible transistions from the current state in fsm with event
-    for j = 1:num_transitions
+    for j = 1:num_transitions(1)
       if(strcmp(states{i}{str2double(cur_state(i)),2}(j,1),cur_event))
         has_transition = true;
         break;

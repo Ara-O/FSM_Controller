@@ -1,0 +1,9 @@
+  Trial 14: 
+Optimization Time: 0.022123 sec
+Elapsed Time: 36.428505 sec
+Abstracted Costs:   5.4388 7.6893 
+Abstracted State Path:   1 7 61 63 47 37 17 
+Abstracted Event Path:   b05s a03s b01s a04s b06s b02s 
+Overall State Path:   [ 1 1 1 1 ]  [ 1 10 8 7 ]  [ 1 25 120 91 ]  [ 1 3 3 96 ]  [ 1 35 126 100 ]  [ 2 35 126 100 ]  [ 6 35 126 100 ]  [ 6 7 140 100 ]  [ 6 32 171 90 ]  [ 6 34 171 90 ]  [ 6 89 174 124 ]  [ 5 89 174 124 ]  [ 5 34 171 37 ]  [ 5 99 172 40 ]  [ 5 75 60 40 ]  [ 1 75 60 40 ]  [ 1 70 60 40 ]  
+Overall Event Path:   b05s a03s b05f b01s a08e b10e a03f a04s b01f b06s a07e b06f b02s a04f b09e b02f 
+

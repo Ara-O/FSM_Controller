@@ -7,7 +7,7 @@ has_event = 0;
 events_size = size(event_list);
 
 % Loops through events comparing agianst input event and checks for a match
-for i = 1:events_size
+for i = 1:events_size(1)
   if(strcmp(event_list(i,1),event))
     has_event = true;
     break

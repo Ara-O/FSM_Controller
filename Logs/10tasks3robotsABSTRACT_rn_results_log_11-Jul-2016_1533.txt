@@ -1,0 +1,9 @@
+  Trial 70: 
+Optimization Time: 4.259342 sec
+Elapsed Time: 111.204813 sec
+Abstracted Costs:   54.821 33.2556 42.7584 
+Abstracted State Path:   1 7 1470 680 684 2469 692 486 959 1062 657 
+Abstracted Event Path:   b01s c09s a07s b02s c03s c10s c04s c05s a08s c06s 
+Overall State Path:   1 7 39880 46128 40728 48328 46289 47435 46560 47322 46562 47587 47137 47862 33141 47873 33871 21553 35871 21570 21875 
+Overall Event Path:   b01s c09s a07s b01f b02s c09f c03s c03f c10s c10f c04s c04f c05s a07f a08s b02f c05f c06s a08f c06f 
+

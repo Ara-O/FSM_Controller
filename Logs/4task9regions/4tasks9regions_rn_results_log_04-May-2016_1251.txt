@@ -1,0 +1,6 @@
+  Offline Trial 50: 
+Optimization Time: 1.153345 sec
+Costs:   155.9231 155.9231 
+State Path:   1 3 11 36 83 171 295 497 716 1061 1359 1730 2024 2345 2607 2871 2634 
+Event Path:   a01s b03s a01f a02s b12e b09e b03f b04s b08e a06e b07e a09e a08e a13e a02f b04f 
+

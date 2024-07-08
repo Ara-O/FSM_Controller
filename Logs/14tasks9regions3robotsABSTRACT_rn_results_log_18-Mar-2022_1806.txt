@@ -1,0 +1,4 @@
+  Offline Trial 10: 
+Optimization Time: 0.001089 sec
+Costs:   0 0 0 
+Abstracted State Path:   1 

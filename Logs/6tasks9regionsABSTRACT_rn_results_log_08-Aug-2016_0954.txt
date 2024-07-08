@@ -1,0 +1,9 @@
+  Trial 65: 
+Optimization Time: 0.046824 sec
+Elapsed Time: 195.133145 sec
+Abstracted Costs:   50.2785 63.6458 
+Abstracted State Path:   1 2 8 9 55 26 30 
+Abstracted Event Path:   a01s b03s a02s b05s b04s b06s 
+Overall State Path:   1 7 1046 1040 664 6499 6502 6497 6508 6834 6550 6703 6711 6009 6008 4068 4073 6076 5564 2186 3942 3945 5560 8229 495 
+Overall Event Path:   a01s b03s b14e a01f a02s b11e a12e b03f b05s b05f b04s b10e a11e b09e b04f b06s b08e a10e b11e a15e a02f b14e b13e b06f 
+

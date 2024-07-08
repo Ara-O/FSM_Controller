@@ -1,0 +1,18 @@
+  Offline Trial 11: 
+Optimization Time: 0.446583 sec
+Costs:   9.158 9.658 
+State Path:   1 6 587 585 401 157 156 158 41 153 152 154 216 213 214 81 
+Event Path:   b01s a06e b08e b01f b03s a07e b03f b04s b05e a08e b04f b02s b06e a05e b02f 
+
+  Offline Trial 12: 
+Optimization Time: 0.904571 sec
+Costs:   9.6383 8.2072 
+State Path:   1 3 578 577 550 671 641 352 278 275 183 203 204 374 68 81 
+Event Path:   a03s b01s a06e b08e a07e b01f b05e a08e b06e b02s a03f a04s a05e b02f a04f 
+
+  Offline Trial 13: 
+Optimization Time: 1.313231 sec
+Costs:   9.5 6.9907 
+State Path:   1 3 578 358 196 192 194 275 183 203 69 67 68 81 
+Event Path:   a03s b01s b08e b01f b07e a08e b06e b02s a03f b02f a05e a04s a04f 
+

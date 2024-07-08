@@ -1,0 +1,6 @@
+  Offline Trial 15: 
+Optimization Time: 0.016928 sec
+Costs:   11.6695 12.9759 
+Abstracted State Path:   1 5 50 48 20 26 17 
+Abstracted Event Path:   b01s a05s b02s a06s b03s b04s 
+

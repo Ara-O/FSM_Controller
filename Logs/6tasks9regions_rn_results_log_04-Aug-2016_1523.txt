@@ -1,0 +1,7 @@
+  Trial 63: 
+Optimization Time: 22.113848
+Elapsed Time: 174.880994
+Costs:   73.7496 66.1717 
+State Path:   1 6 1792 934 9 1900 1892 1904 1890 6905 5102 5325 5322 2155 3932 3935 5459 5471 6287 5465 6150 6152 495 
+Event Path:   b05s a01s a01f a03s a12e a11e b12e a03f a02s a14e b11e a15e b05f b06s a02f a04s b14e a10e b13e b06f a09e a04f 
+

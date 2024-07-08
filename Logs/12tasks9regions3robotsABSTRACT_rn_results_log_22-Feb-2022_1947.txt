@@ -1,0 +1,6 @@
+  Offline Trial 111: 
+Optimization Time: 16.019338 sec
+Costs:   14.7913 14.3486 12.3299 
+Abstracted State Path:   1 4 10539 8485 3109 3199 7348 7913 10097 8940 13567 13569 2941 
+Abstracted Event Path:   a05s b03s c07s a01s b11s c09s b04s a02s c10s c08s b12s a06s 
+

@@ -29,7 +29,8 @@ taskY=0;
 taskOrigin='';
 
 %disp(size(tasks))
-for k=1:size(tasks)
+size_of_tasks = size(tasks);
+for k=1:size_of_tasks(1)
   %another error here with the task numberings?
   
   if strcmp(tasks(k,1),['tsk' taskNum]) || strcmp(tasks(k,1),['tsk0' taskNum])  % find the task in the list

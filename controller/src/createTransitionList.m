@@ -26,10 +26,10 @@ for i = i_k+1:num_fsms
       states_size=0;
   end
   fsm_events = size(transitions_away);
-  for j = 1:fsm_events
+  for j = 1:fsm_events(1)
     %Compares to each value in next fsm
     added_yet = false;
-    for k = 1:states_size
+    for k = 1:states_size(1)
       if(strcmp(transition_list(k,1),transitions_away(j,1)))
         %Adds the fsm num to list
         added_yet = true;

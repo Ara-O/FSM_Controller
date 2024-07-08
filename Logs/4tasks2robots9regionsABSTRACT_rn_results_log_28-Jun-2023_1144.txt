@@ -1,0 +1,9 @@
+  Trial 13: 
+Optimization Time: 0.002751 sec
+Elapsed Time: 67.536246 sec
+Abstracted Costs:   10.6458 8 
+Abstracted State Path:   1 5 12 9 10 
+Abstracted Event Path:   b03s a01s b04s a02s 
+Overall State Path:   [ 1 1 1 ]  [ 1 6 5 ]  [ 1 9 29 ]  [ 5 9 29 ]  [ 32 9 29 ]  [ 32 2 20 ]  [ 32 10 24 ]  [ 52 10 24 ]  [ 65 10 24 ]  [ 26 10 24 ]  [ 20 10 24 ]  [ 20 16 24 ]  [ 20 14 25 ]  [ 61 14 25 ]  [ 61 11 15 ]  [ 18 11 15 ]  [ 18 12 15 ]  
+Overall Event Path:   b03s a01s b05e a09e b03f b04s b06e a08e a13e b07e a01f a02s a08e b04f a09e a02f 
+

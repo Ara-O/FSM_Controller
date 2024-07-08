@@ -1,0 +1,7 @@
+  Trial 67: 
+Optimization Time: 22.699870
+Elapsed Time: 145.842141
+Costs:   71.5777 71.5777 
+State Path:   1 3 1046 661 338 1316 1297 1318 1378 6562 4673 4808 4806 4807 3970 3859 3867 3860 3869 4859 5846 5847 495 
+Event Path:   b03s a01s a01f a05s a12e a11e b12e a05f a02s a14e b11e a15e a02f b03f a06s b04s a14e b08e a13e b09e a06f b04f 
+

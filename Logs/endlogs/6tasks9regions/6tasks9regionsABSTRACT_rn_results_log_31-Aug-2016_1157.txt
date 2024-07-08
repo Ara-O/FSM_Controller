@@ -1,0 +1,9 @@
+  Trial 75: 
+Optimization Time: 0.035283 sec
+Elapsed Time: 167.195887 sec
+Abstracted Costs:   59.2611 36.4576 
+Abstracted State Path:   1 2 8 10 18 20 30 
+Abstracted Event Path:   a01s b03s a05s b04s a06s a02s 
+Overall State Path:   [ 1 1 1 1 ]  [ 1 6 6 7 ]  [ 1 30 69 54 ]  [ 1 39 69 54 ]  [ 1 54 107 99 ]  [ 4 54 107 99 ]  [ 20 54 107 99 ]  [ 17 54 107 99 ]  [ 17 40 90 99 ]  [ 17 56 111 94 ]  [ 20 56 111 94 ]  [ 34 56 111 94 ]  [ 34 45 75 46 ]  [ 34 59 116 95 ]  [ 36 59 116 95 ]  [ 22 59 116 95 ]  [ 15 59 116 95 ]  [ 66 59 116 95 ]  [ 66 45 75 48 ]  [ 66 68 146 97 ]  [ 59 68 146 97 ]  [ 58 68 146 97 ]  [ 58 43 85 97 ]  [ 50 43 85 97 ]  [ 50 70 85 97 ]  
+Overall Event Path:   a01s b03s a01f a05s b14e a12e b11e b03f b04s b14e a11e a05f a06s b15e a12e b10e a13e a06f a02s a14e b09e b04f a15e a02f 
+

@@ -11,8 +11,8 @@ num_events = size(event_list);
 possible_transitions = cell.empty;
 
 % Loop through each list comparing every element
-for i = 1:num_transitions
-  for j = 1:num_events
+for i = 1:num_transitions(1)
+  for j = 1:num_events(1)
     if(strcmp(transition_list{i,1},event_list{j,1}))
       % First checks that the size of the second column is the same so that 
       % the comparision step after does not crash

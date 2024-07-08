@@ -1,0 +1,5 @@
+  Trial 63: 
+Optimization Time: 0.035346 sec
+Elapsed Time: 989.279441 sec
+Abstracted Costs:   62.5708 42.8446 
+Abstracted State Path:   1 2 8 10 

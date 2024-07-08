@@ -1,0 +1,7 @@
+  Trial 72: 
+Optimization Time: 4.556665
+Elapsed Time: 198.626283
+Costs:   120.3971 120.3971 
+State Path:   1 7 1792 934 9 2085 1894 1904 1890 5159 5155 5160 6274 6275 6277 7238 2182 2189 7642 7096 488 491 495 
+Event Path:   a01s b05s a01f a03s b12e a08e a11e a03f a04s a10e b11e b05f a09e b06s a04f a02s b12e b13e a10e b06f a15e a02f 
+

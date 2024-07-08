@@ -1,0 +1,6 @@
+  Offline Trial 222: 
+Optimization Time: 0.348054 sec
+Costs:   12.3171 10.2762 12.5122 
+Abstracted State Path:   1 10 555 493 480 282 339 180 181 
+Abstracted Event Path:   c01s a07s b03s c05s a08s c06s b04s c02s 
+

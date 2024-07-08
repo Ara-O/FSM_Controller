@@ -1,0 +1,60 @@
+  Trial 20: 
+Optimization Time: 0.015362 sec
+Elapsed Time: 152.574730 sec
+Abstracted Costs:   28.7612 34.4179 
+Abstracted State Path:   1 2 37 40 51 18 39 
+Abstracted Event Path:   a1s b3s a1f a2s b3f b4s 
+Overall State Path: 1 3 10 25 59 95 155 216 305 373 458 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e b6e b3f b4s a8e a7e a2f b4f 
+
+
+  Trial 21: 
+Optimization Time: 0.013209 sec
+Elapsed Time: 177.844309 sec
+Abstracted Costs:   28.4667 39.28 
+Abstracted State Path:   1 2 37 40 51 18 39 
+Abstracted Event Path:   a1s b3s a1f a2s b3f b4s 
+Overall State Path: 1 3 10 25 59 95 155 216 305 373 458 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e b6e b3f b4s a8e a7e a2f b4f 
+
+
+  Trial 22: 
+Optimization Time: 0.013535 sec
+Elapsed Time: 145.224447 sec
+Abstracted Costs:   27.5127 41.9349 
+Abstracted State Path:   1 3 27 28 22 9 39 
+Abstracted Event Path:   a3s b1s a3f a4s b1f b2s 
+Overall State Path: 1 2 6 15 34 69 111 175 247 333 405 488 476 
+Overall Event Path: a3s b1s a6e a3f a4s b5e b1f b2s a4f b8e b7e b2f 
+
+
+  Trial 23: 
+Optimization Time: 0.013307 sec
+Elapsed Time: 169.042764 sec
+Abstracted Costs:   49.4149 21.5241 
+Abstracted State Path:   1 5 37 21 14 12 39 
+Abstracted Event Path:   b3s a1s b3f b4s a1f a2s 
+Overall State Path: 1 5 10 26 60 99 161 217 305 373 458 516 476 
+Overall Event Path: b3s a1s b7e b6e b3f b4s a1f a2s a8e a7e a2f b4f 
+
+
+  Trial 24: 
+Optimization Time: 0.013478 sec
+Elapsed Time: 144.812907 sec
+Abstracted Costs:   38.7301 29.7476 
+Abstracted State Path:   1 2 37 40 51 18 39 
+Abstracted Event Path:   a1s b3s a1f a2s b3f b4s 
+Overall State Path: 1 3 10 25 59 95 155 216 305 373 458 516 476 
+Overall Event Path: a1s b3s a1f a2s b7e b6e b3f b4s a8e a7e a2f b4f 
+
+
+  Trial 25: 
+Optimization Time: 0.012611 sec
+Elapsed Time: 113.350508 sec
+Abstracted Costs:   32.3665 28.7609 
+Abstracted State Path:   1 4 27 29 32 11 39 
+Abstracted Event Path:   b1s a3s b1f b2s a3f a4s 
+Overall State Path: 1 4 6 15 35 70 116 177 247 333 405 488 476 
+Overall Event Path: b1s a3s a6e b5e b1f b2s a3f a4s a4f b8e b7e b2f 
+
+

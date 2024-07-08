@@ -1,0 +1,80 @@
+  Trial 63: 
+Optimization Time: 0.039057 sec
+Elapsed Time: 192.846129 sec
+Abstracted Costs:   62.5708 42.8446 
+Abstracted State Path:   1 2 8 10 18 19 30 
+Abstracted Event Path:   a01s b03s a05s b04s a02s a06s 
+Overall State Path:   1 7 1046 661 338 7480 3341 1317 8557 1713 1692 1690 1694 1702 5057 2218 3969 3972 3867 5008 3869 5009 5846 2925 495 
+Overall Event Path:   a01s b03s a01f a05s b12e b11e a12e b03f b04s b14e a11e a05f a02s a10e b11e a15e a02f a06s b08e a14e b09e a13e b04f a06f 
+
+  Trial 64: 
+Optimization Time: 0.066446 sec
+Elapsed Time: 240.366143 sec
+Abstracted Costs:   79.8122 51.5279 
+Abstracted State Path:   1 2 8 10 18 20 30 
+Abstracted Event Path:   a01s b03s a05s b04s a06s a02s 
+Overall State Path:   1 7 1046 661 338 1307 1300 1308 8240 1705 1693 1690 1694 1701 6778 6785 5868 5033 5874 6006 5066 5997 4055 4058 495 
+Overall Event Path:   a01s b03s a01f a05s b14e a08e b11e b03f b04s b14e a11e a05f a06s b15e a12e b10e a13e a06f a02s a14e b09e b04f a15e a02f 
+
+  Trial 65: 
+Optimization Time: 0.035909 sec
+Elapsed Time: 231.820229 sec
+Abstracted Costs:   50.2785 63.6458 
+Abstracted State Path:   1 2 8 9 55 26 30 
+Abstracted Event Path:   a01s b03s a02s b05s b04s b06s 
+Overall State Path:   1 7 1046 1040 664 6499 6502 2197 6837 2244 6705 7572 8732 8733 8739 8648 5398 6076 5399 7091 5563 3949 5559 8229 495 
+Overall Event Path:   a01s b03s b14e a01f a02s b11e b03f b05s b05f b04s b10e b09e b04f b06s b08e a12e a11e b07e b12e a10e a15e a02f b13e b06f
+
+  Trial 66: 
+Optimization Time: 0.037328 sec
+Elapsed Time: 160.112359 sec
+Abstracted Costs:   67.8816 47.0768 
+Abstracted State Path:   1 2 8 10 53 19 30 
+Abstracted Event Path:   a01s b03s a05s a02s b04s a06s 
+Overall State Path:   1 7 1046 1040 664 1307 1299 1294 1298 1304 434 4813 4806 2217 3969 3972 3867 3860 3869 5009 5846 5847 495 
+Overall Event Path:   a01s b03s b14e a01f a05s a12e a11e a05f a02s a10e b11e a15e b03f b04s a02f a06s a14e b08e b09e a13e a06f b04f 
+
+  Trial 67: 
+Optimization Time: 0.037811 sec
+Elapsed Time: 177.791773 sec
+Abstracted Costs:   69.1707 40.1707 
+Abstracted State Path:   1 2 8 10 18 19 30 
+Abstracted Event Path:   a01s b03s a05s b04s a02s a06s 
+Overall State Path:   1 7 1046 661 338 7480 3341 1317 8557 1713 5567 5589 8529 5991 5988 4050 4047 4048 4054 4007 4006 2925 495 
+Overall Event Path:   a01s b03s a01f a05s b12e b11e a12e b03f b04s b08e a11e a05f a02s b09e b04f a14e a15e a02f a06s a14e a13e a06f 
+
+Trial 70: 
+Optimization Time: 0.035450 sec
+Elapsed Time: 204.868513 sec
+Abstracted Costs:   66.7474 45.1009 
+Abstracted State Path:   1 2 62 22 27 56 30 
+Abstracted Event Path:   a01s b05s a03s b06s a02s a04s 
+Overall State Path:   1 7 1792 934 9 2107 1901 2118 8192 2624 2611 2619 8446 6072 5553 3937 3932 3935 5459 5455 5457 5465 7054 6152 495 
+Overall Event Path:   a01s b05s a01f a03s b14e a12e b11e b05f b06s b10e a11e a03f a02s a14e b11e a15e a02f a04s b12e a10e b13e a09e b06f a04f 
+
+  Trial 71: 
+Optimization Time: 0.064440 sec
+Elapsed Time: 217.512925 sec
+Abstracted Costs:   70.3679 48.4296 
+Abstracted State Path:   1 2 62 22 27 56 30 
+Abstracted Event Path:   a01s b05s a03s b06s a02s a04s 
+Overall State Path:   1 7 1792 934 9 2107 1893 2086 134 2589 8357 2619 8446 6072 5553 3937 3932 3935 5459 5455 5457 5465 7054 6152 495 
+Overall Event Path:   a01s b05s a01f a03s b14e a08e b11e b05f b06s b10e a11e a03f a02s a14e b11e a15e a02f a04s b12e a10e b13e a09e b06f a04f
+
+  Trial 72: 
+Optimization Time: 0.053209 sec
+Elapsed Time: 164.816649 sec
+Abstracted Costs:   57.0074 34.6468 
+Abstracted State Path:   1 2 62 22 27 20 30 
+Abstracted Event Path:   a01s b05s a03s b06s a04s a02s 
+Overall State Path:   1 7 1792 1784 937 2107 1901 2118 8192 2624 2392 2378 2380 7040 7041 7038 7042 7239 7642 489 488 491 495 
+Overall Event Path:   a01s b05s b14e a01f a03s a12e b11e b05f b06s b14e a11e a03f a04s a08e b13e a09e a04f a02s b06f a10e a15e a02f 
+
+  Trial 75: 
+Optimization Time: 0.067246 sec
+Elapsed Time: 160.590459 sec
+Abstracted Costs:   59.2611 36.4576 
+Abstracted State Path:   1 2 8 10 18 20 30 
+Abstracted Event Path:   a01s b03s a05s b04s a06s a02s 
+Overall State Path:   1 7 1046 661 338 1307 1299 1317 8557 1713 1692 1690 1694 1701 6777 4904 3908 5033 5874 6006 5066 5997 4055 4058 495 
+Overall Event Path:   a01s b03s a01f a05s b14e a12e b11e b03f b04s b14e a11e a05f a06s a12e b11e a13e b10e a06f a02s a14e b09e b04f a15e a02f 
