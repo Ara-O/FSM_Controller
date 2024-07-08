@@ -25,7 +25,7 @@ while runningScenario <= str2double(scenNumFinish)
     run(['../FSMs/' ABSfoldName '/fsmdata.m'])       %Import FSM data from FSM GUI
     
     
-    rosinit('localhost')
+    %rosinit('localhost')
     
     robot = cell(1, numRobots);
     robot_previous_location_x = zeros(1, numRobots);

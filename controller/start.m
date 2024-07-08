@@ -290,19 +290,19 @@ if OFFLINE
         run('offline_ga.m')
         % Offline, genetic algorithm, and batch
     elseif strcmp(chosenAlgorithm, "2") && strcmp(menu, "2")
-        run('TestGAMono.m')
+        run('offline_ga_batch.m')
         % Offline, greedy
     elseif strcmp(chosenAlgorithm, "3")
-        run('monolithicGreedy.m')
+        run('offline_greedy.m')
         % Offline, HLNS/ALNS
     elseif strcmp(chosenAlgorithm, "4")
         %Not sure
-        run('monolithicHLNS')
+        run('offline_hlns.m')
     end
 end
 
 if ~OFFLINE
-    rosshutdown; %Shutdown MATLAB ros node if it exists
+    %rosshutdown; %Shutdown MATLAB ros node if it exists
     
     wait = input(['Please load up scenario ' num2str(runningScenario) ', then press Enter']);
     
