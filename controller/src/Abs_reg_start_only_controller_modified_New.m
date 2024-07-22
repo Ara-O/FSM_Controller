@@ -991,6 +991,11 @@ while runningScenario <= str2double(scenNumFinish)
 for i = 1:numRobots
     if ~isempty(goal{i})  % if goal was assigned,
         robot{i}.goal_msg.header.frame_id = 'map';
+        currentTime = ros2message('builtin_interfaces/Time');  % Create a new Time message
+        currentTime.sec = int32(floor(posixtime(datetime('now')))); % Current seconds since epoch
+        currentTime.nanosec = uint32(mod(floor(posixtime(datetime('now')) * 1e9), 1e9)); % Nanoseconds
+
+        robot{i}.goal_msg.header.stamp = currentTime; % Set the timestamp% Set to current time
         % After possible goal conditioning, extract the Goal
         robot{i}.goal_msg.pose.position.x = goal{i}(1); % extract X of goal
         robot{i}.goal_msg.pose.position.y = goal{i}(2); % extract Y
@@ -999,6 +1004,7 @@ for i = 1:numRobots
                 || (goal_need_resend(i) == 1)
             robot{i}.goal_msg.pose.orientation.w = 1.0; % set direction
             goal_need_resend(i) = 0; % Goal has changed, so we may need to replan
+            
             send(robot{i}.goal_pub, robot{i}.goal_msg); % Publish Goals
             robot{i}.old_goal_X = robot{i}.goal_msg.pose.position.x;
             robot{i}.old_goal_Y = robot{i}.goal_msg.pose.position.y;

@@ -19,18 +19,21 @@ index = strcmp(trans_mat{path(end-1),2}(:,2),num2str(path(end)));
 trans_event = trans_mat{path(end-1),2}{index,1}{1};
 trim_events = false;
 
+transitions_size = size(possible_transitions);
+
 % Need to check the type of event to see if finish
 if(strcmp(trans_event(end),'f'))
   % Force start events if last transition was finish event 
   % BUT - only if there are start events for the same robot
-  for j = 1:size(possible_transitions)
+  for j = 1:transitions_size(1)
     if(strcmp(possible_transitions{j,1}(end),'s') && ...
        strcmp(possible_transitions{j,1}(1),trans_event(1)))
       trim_events = true;
     end
   end
+
   if(trim_events)
-    for i = 1:size(possible_transitions)
+    for i = 1:transitions_size(1)
       if(strcmp(possible_transitions{i,1}(end),'s'))
         new_transitions(end+1,1) = possible_transitions(i,1);
         new_transitions(end,2) = possible_transitions(i,2);
