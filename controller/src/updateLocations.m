@@ -16,18 +16,18 @@ function robot = updateLocations(robot)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Position.X)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Position.Y)
 
-robot.X = robot.odom_sub.LatestMessage.Pose.Pose.Position.X;
-robot.Y = robot.odom_sub.LatestMessage.Pose.Pose.Position.Y;
+robot.X = robot.odom_sub.LatestMessage.pose.pose.position.x;
+robot.Y = robot.odom_sub.LatestMessage.pose.pose.position.y;
 
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Orientation.X)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Orientation.Y)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Orientation.Z)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Orientation.W)
 
-x = robot.odom_sub.LatestMessage.Pose.Pose.Orientation.X;
-y = robot.odom_sub.LatestMessage.Pose.Pose.Orientation.Y;
-z = robot.odom_sub.LatestMessage.Pose.Pose.Orientation.Z;
-w = robot.odom_sub.LatestMessage.Pose.Pose.Orientation.W;
+x = robot.odom_sub.LatestMessage.pose.pose.orientation.x;
+y = robot.odom_sub.LatestMessage.pose.pose.orientation.y;
+z = robot.odom_sub.LatestMessage.pose.pose.orientation.z;
+w = robot.odom_sub.LatestMessage.pose.pose.orientation.w;
 theta = quat2axang([w x y z]);
 if theta(3) < 0
   robot.THETA = 2*pi - theta(4);

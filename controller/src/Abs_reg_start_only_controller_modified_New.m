@@ -36,8 +36,8 @@ while runningScenario <= str2double(scenNumFinish)
 
     
     for i=1:numRobots                              %Setup Each Robot
-        robot{i} = struct;
-        robot{i} = setupRobot(robot{i},i);   % i-1 because Stage starts with robot_0
+        %robot{i} = struct;
+        robot{i} = setupRobot(i);   % i-1 because Stage starts with robot_0
         %Movebase fixes
         robot{i}.old_goal_X = 666;
         robot{i}.old_goal_Y = 666;

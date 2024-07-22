@@ -6,7 +6,7 @@ num_transitions = size(trans_mat);
 index = -1;
 
 % Simply loops through trans_mat and compares, breaking if match
-for i = 1:num_transitions
+for i = 1:num_transitions(1)
   if(isequal(trans_mat{i,1},cur_state))
     index = i;
     break

@@ -1,26 +1,32 @@
-function robot = setupRobot(robot,num)
-% Author: Jonathon Kreska
-% Version: 1.0
-% Date: December 16, 2015
-% Changelog:
-%  1.0: Initial Release
-% Current Capability:
-%  Returns the robot cell matrix updated with ROS publisher of goals and
-%  subscriber to odometry.
-% Input:
-%  robot = cell matrix of robot{num}
-%  num = the current robot number
-% Output:
-%  robot = updated cell matrix of robot{num}
+function robot = setupRobot(num)
+    % Author: Jonathon Kreska, Ara Oladipo
+    % Version: 2.0
+    % Date: June 20, 2024
+    % Changelog:
+    %  1.0: Initial Release
+    %  2.0: Upgrade to use ROS2
+    % Current Capability:
+    %  Returns the robot cell matrix updated with ROS publisher of goals and
+    %  subscriber to odometry.
+    % Input:
+    %  num = the current robot number
+    % Output:
+    %  robot = struct with updated ROS subscriber and publisher
 
-%Subscriber to Stage Odometry
-robotSubName = [ '/robot' char(num+48) '/odom'];
-
-robotNode = ros2node(['robot' char(num+48)]);
-
-robot.odom_sub = ros2subscriber(robotNode, robotSubName, 'nav_msgs/Odometry');
-
-%Publish goals to Movebase
-robotPubName = [ '/robot' char(num+48) '/move_base_simple/goal'];
-robot.goal_pub =  ros2publisher(robotNode,  robotPubName);
-robot.goal_msg=ros2message(robot.goal_pub);
+    % Initialize the structure to hold ROS objects
+    robot = struct();
+    
+    % Define topic names based on robot number
+    robotSubName = ['/robot' char(num+48) '/odom'];
+    robotPubName = ['/robot' char(num+48) '/goal_pose'];
+    
+    % Create ROS 2 node
+    robot.node = ros2node(['robot' char(num+48)]);
+    
+    % Create ROS 2 subscriber for odometry
+    robot.odom_sub = ros2subscriber(robot.node, robotSubName, 'nav_msgs/Odometry');
+    
+    % Create ROS 2 publisher for goal poses
+    robot.goal_pub = ros2publisher(robot.node, robotPubName, 'geometry_msgs/PoseStamped');
+    robot.goal_msg = ros2message(robot.goal_pub);
+end
