@@ -6,7 +6,6 @@ function [all_ass_event_path,num_all_elem] = calcPathUntilAllBotAssigned(ABS_eve
 
 robot_assigned = false(numRobots,1);
 
-%disp(ABS_event_path)
 for i=ABS_pc:numel(ABS_event_path)
   rob_num = ABS_event_path{i}(1)-96;
   robot_assigned(rob_num,1) = true;
@@ -19,19 +18,15 @@ end
 
 all_ass_event_path = ABS_event_path(ABS_pc:i);
 
-%{
-
-%disp("All assigned event path: ")
-%disp(all_ass_event_path)
 num_all_elem=numel(all_ass_event_path);
 
 if num_all_elem < numRobots
   for i=1:(numRobots-num_all_elem)
     j=numel(ABS_event_path)-(num_all_elem -(i-1));
-   % disp("abs event path " +ABS_event_path)
-    %disp(num_all_elem + " " + (num_all_elem + i) + " " + numRobots + (numRobots-num_all_elem) + " " + j)
+    disp("abs event path " +ABS_event_path)
+    disp( all_ass_event_path)
+    disp(num_all_elem + " " + (num_all_elem + i) + " " + numRobots + (numRobots-num_all_elem) + " " + j)
     all_ass_event_path{num_all_elem+i}=ABS_event_path{j};
     all_ass_event_path{num_all_elem+i}(4)='f';
   end
 end
-%}

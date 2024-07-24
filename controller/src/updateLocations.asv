@@ -15,7 +15,7 @@ function robot = updateLocations(robot)
 
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Position.X)
 %disp(robot.odom_sub.LatestMessage.Pose.Pose.Position.Y)
-%disp(robot);
+disp(robot);
 robot.X = robot.odom_sub.LatestMessage.pose.pose.position.x;
 robot.Y = robot.odom_sub.LatestMessage.pose.pose.position.y;
 

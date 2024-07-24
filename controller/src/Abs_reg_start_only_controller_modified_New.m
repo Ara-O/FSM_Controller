@@ -74,6 +74,7 @@ while runningScenario <= str2double(scenNumFinish)
     
     start_loc = zeros(1, numRobots);
     for i=1:numRobots                              %Update Robot Locations
+        disp(robot{i})
         robot{i} = updateLocations(robot{i});
         start_loc(i,1) = robot{i}.X;
         start_loc(i,2) = robot{i}.Y;
