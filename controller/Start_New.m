@@ -1,13 +1,11 @@
 % Start Script
 
-% Author: Eyiara Oladipo
+% Author: Jonathon Kreska
 % Version: 1.1
-% Date: July 4, 2024
-
+% Date: May 3, 2016
 % Changelog:
 %  1.0: Initial Release
 %  1.1: Cleaned up code and Simplified
-%  1.2: Updated the codebase
 
 % Running this and selecting options will get the controllers ready for you
 
@@ -28,7 +26,33 @@ end
 REGIONS_EXIST = logical(input('Are there regions? '));
 
 %% Initialize
+% disp('Note: Use the absolute path, e.g /home/amrl/Documents/FSMs/4tasks2robots4regions_rn')
 
+% if ~ABSTRACTED
+%     validFolderName = false;
+%     while ~validFolderName
+%         foldName = input('Please enter the file path of the scenario''s folder: ', 's');
+%
+%         if ~isfolder(foldName)
+%             disp('This folder does not exist, try again');
+%         else
+%             pathList = strsplit(foldName, '/');
+%             foldName = pathList{end};
+%
+%             disp(['Does the ' foldName ' folder contain:' ]);
+%             disp('- an fsmdata.m file');
+%             disp('- a userdata file');
+%             disp('- an fsmdataIncremental.m file (optional)');
+%             validFolderInformation = logical(input('Choice (1 or 0): '));
+%
+%             if ~validFolderInformation
+%                 disp('Please use a valid folder');
+%             else
+%                 validFolderName = true;
+%             end
+%         end
+%     end
+% end
 
 default_scenario = logical(input('Would you like to select a default scenario: '));
 
@@ -57,22 +81,22 @@ if default_scenario
         disp('8 = 10tasks9regions')
         disp('9 = 10tasks9regionsModular')
         disp('10 = 10tasks9regions3robots')
-        disp('11 = 6tasks6regions')
-        disp('12 = 6tasks9regions3')
-        disp('13 = 12tasks9regions3robots')
-        disp('14 = 14tasks9regions3robots')
-        disp('15 = 8tasks9regions3robots')
-        disp('16 = 6tasks9regions2robots')
-        disp('17 = 4tasks2robots4regions')
-        disp('18 = 4tasks2robots6regions')
-        disp('19 = 4tasks2robots9regions')
-        disp('20 = 6tasks2robots4regions')
-        disp('21 = 6tasks2robots6regions')
-        disp('22 = 6tasks2robots9regions')
-        disp('23 = 8tasks2robots4regions')
-        disp('24 = 8tasks2robots6regions')
-        disp('25 = 8tasks2robots9regions')
-        disp('0 = test')
+        disp('25 = 6tasks6regions')
+        disp('32 = 6tasks9regions3')
+        disp('24 = 12tasks9regions3robots')
+        disp('78 = 14tasks9regions3robots')
+        disp('0 = 8tasks9regions3robots')
+        disp('56 = 6tasks9regions2robots')
+        disp('40 = 4tasks2robots4regions')
+        disp('41 = 4tasks2robots6regions')
+        disp('42 = 4tasks2robots9regions')
+        disp('50 = 6tasks2robots4regions')
+        disp('51 = 6tasks2robots6regions')
+        disp('52 = 6tasks2robots9regions')
+        disp('60 = 8tasks2robots4regions')
+        disp('61 = 8tasks2robots6regions')
+        disp('62 = 8tasks2robots9regions')
+        disp('63 = test')
     end
     
     
@@ -138,56 +162,56 @@ if default_scenario
         elseif choice == '10'
             foldName = '10tasks9regions3robots_rn';
             ABSfoldName = '10tasks9regions3robotsABSTRACT_rn';
-        elseif choice == '11'
+        elseif choice == '25'
             foldName = '6tasks6regions_rn';
             ABSfoldName = '6tasks6regionsABSTRACT_rn';
-        elseif choice == '12'
+        elseif choice == '32'
             foldName = '6tasks9regions3_rn';
             ABSfoldName = '6tasks9regions3ABSTRACT_rn';
-        elseif choice == '13'
+        elseif choice == '0'
             foldName = '8tasks9regions3robots_rn';
             ABSfoldName = '8tasks9regions3robotsABSTRACT_rn';
-        elseif choice == '14'
+        elseif choice == '24'
             foldName = '12tasks9regions3robots_rn';
             ABSfoldName = '12tasks9regions3robotsABSTRACT_rn';
-        elseif choice == '15'
+        elseif choice == '78'
             foldName = '14tasks9regions3robots_rn';
             ABSfoldName = '14tasks9regions3robotsABSTRACT_rn';
-        elseif choice == '16'
+        elseif choice == '56'
             foldName = '6tasks9regions2robots_rn';
             ABSfoldName = '6tasks9regions2robotsABSTRACT_rn';
-        elseif choice == '17'
+        elseif choice == '40'
             foldName = '4tasks2robots4regions_rn';
             ABSfoldName = '4tasks2robots4regionsABSTRACT_rn';
-        elseif choice == '18'
+        elseif choice == '41'
             foldName = '4tasks2robots6regions_rn';
             ABSfoldName = '4tasks2robots6regionsABSTRACT_rn';
-        elseif choice == '19'
+        elseif choice == '42'
             foldName = '4tasks2robots9regions_rn';
             ABSfoldName = '4tasks2robots9regionsABSTRACT_rn';
-        elseif choice == '20'
+        elseif choice == '50'
             foldName = '6tasks2robots4regions_rn';
             ABSfoldName = '6tasks2robots4regionsABSTRACT_rn';
-        elseif choice == '21'
+        elseif choice == '51'
             foldName = '6tasks2robots6regions_rn';
             ABSfoldName = '6tasks2robots6regionsABSTRACT_rn';
-        elseif choice == '22'
+        elseif choice == '52'
             foldName = '6tasks2robots9regions_rn';
             ABSfoldName = '6tasks2robots9regionsABSTRACT_rn';
-        elseif choice == '23'
+        elseif choice == '60'
             foldName = '8tasks2robots4regions_rn';
             ABSfoldName = '8tasks2robots4regionsABSTRACT_rn';
-        elseif choice == '24'
+        elseif choice == '61'
             foldName = '8tasks2robots6regions_rn';
             ABSfoldName = '8tasks2robots6regionsABSTRACT_rn';
-        elseif choice == '25'
+        elseif choice == '62'
             foldName = '8tasks2robots9regions_rn';
             ABSfoldName = '8tasks2robots9regionsABSTRACT_rn';
-        elseif choice == '0'
+        elseif choice == '63'
             foldName = 'test';
             ABSfoldName = 'test';
         else
-            disp('Invalid Option! Try again!')
+            disp('You idiot! Try again!')
             a(0);
         end
         
@@ -244,6 +268,7 @@ end
 
 runningScenario = str2double(scenNumStart);
 
+
 % Algorithm choice section
 algorithmFlag = false;
 disp("What algorithm would you like to run this scenario with?")
@@ -284,20 +309,20 @@ end
 if OFFLINE
     % Offline, djikstra
     if strcmp(chosenAlgorithm, "1")
-        run('offline_djikstra.m')
+        run('just_calc_opt.m')
         % Offline, genetic algorithm, and single
     elseif strcmp(chosenAlgorithm, "2") && strcmp(menu, "1")
-        run('offline_ga.m')
+        run('monolithicGA.m')
         % Offline, genetic algorithm, and batch
     elseif strcmp(chosenAlgorithm, "2") && strcmp(menu, "2")
-        run('offline_ga_batch.m')
+        run('TestGAMono.m')
         % Offline, greedy
     elseif strcmp(chosenAlgorithm, "3")
-        run('offline_greedy.m')
+        run('monolithicGreedy.m')
         % Offline, HLNS/ALNS
     elseif strcmp(chosenAlgorithm, "4")
         %Not sure
-        run('offline_hlns.m')
+        run('monolithicHLNS')
     end
 end
 

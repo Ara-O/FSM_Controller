@@ -50,8 +50,8 @@ initial_plan=best_plan(1);
 best_event{1}=path_events{idx_fit_aux{1}(1)};
 
 aux_same_result=0;
-num_rep=2; %Why num_rep set as 2
-t_dur = [];
+num_rep=2;
+
 
 %this is the main part of the genetic algorithm code. It keeps running
 %until the number of repetitions doesn't reach the maximum number allowed
@@ -101,7 +101,7 @@ while num_rep<max_rep && aux_same_result<stop_cond
             end
             ind=ind+1;
         end
-    t_dur(1,num_rep)=toc(t1);
+        t_dur(1,num_rep)=toc(t1);
     ind=1;
     final_couples=randperm(length(couples));
     final_couples_trac{num_rep}=final_couples;

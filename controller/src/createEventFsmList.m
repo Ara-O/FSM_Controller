@@ -9,8 +9,7 @@ event_list = events{1}(:,1);
 
 event_list(:,2) = num2cell(1);
 
-event_list_size = size(event_list);
-for kk = 1:event_list_size(1)
+for kk = 1:size(event_list)
   if(strcmp(event_list{kk,1}(end),'s'))
     event_list{kk,3} = 'Task';
     event_list{kk,4} = ['tsk' event_list{kk,1}(2:end-1)];
@@ -27,7 +26,7 @@ for i = 2:num_fsms
   % Compares against all of the currently added values
   events_size = size(event_list);
   fsm_events = size(events{i});
-  for j = 1:fsm_events(1)
+  for j = 1:fsm_events
     %Compares to each value in next fsm
     added_yet = false;
     for k = 1:events_size(1)

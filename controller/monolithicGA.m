@@ -40,9 +40,9 @@ robot_tasks = zeros(numRobots,1);
 
 t_abs=[];
 plan_cost=[];
+
 for i_num=1:num_repet  
     t1=tic;
-    t_dur = cell(1, numel(i_num));  
     [all_plan{i_num},local_event_path,local_state_path,ABS_plan_cost(i_num),num_spoint{i_num},initial_plan(i_num),num_of_changes(i_num),idx_change{i_num},trac_plan_cost{i_num},num_rep(i_num),t_dur{i_num},t_pop{i_num}] = GA_Incremental_New_31(population_size_1,max_rep_1,mutation_rate_1,stop_cond_1,states,start_loc,numTasks,numRobots,numRegions,tasks,regions,robot_tasks,states_incr,events_incr,initial_state_incr,initial_state,events);
     t_abs(i_num)=toc(t1);
     

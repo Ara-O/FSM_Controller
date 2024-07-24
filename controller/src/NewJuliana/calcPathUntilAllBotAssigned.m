@@ -23,9 +23,6 @@ num_all_elem=numel(all_ass_event_path);
 if num_all_elem < numRobots
   for i=1:(numRobots-num_all_elem)
     j=numel(ABS_event_path)-(num_all_elem -(i-1));
-    disp("abs event path " +ABS_event_path)
-    disp( all_ass_event_path)
-    disp(num_all_elem + " " + (num_all_elem + i) + " " + numRobots + (numRobots-num_all_elem) + " " + j)
     all_ass_event_path{num_all_elem+i}=ABS_event_path{j};
     all_ass_event_path{num_all_elem+i}(4)='f';
   end
