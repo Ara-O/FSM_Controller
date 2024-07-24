@@ -1002,7 +1002,7 @@ while runningScenario <= str2double(scenNumFinish)
                         || (goal_need_resend(i) == 1)
                     robot{i}.goal_msg.pose.orientation.w = 1.0; % set direction
                     goal_need_resend(i) = 0; % Goal has changed, so we may need to replan
-                    
+                    disp("Sending goal");
                     send(robot{i}.goal_pub, robot{i}.goal_msg); % Publish Goals
                     robot{i}.old_goal_X = robot{i}.goal_msg.pose.position.x;
                     robot{i}.old_goal_Y = robot{i}.goal_msg.pose.position.y;
@@ -1079,7 +1079,8 @@ while runningScenario <= str2double(scenNumFinish)
     fprintf(fid,'\n');
     
     fprintf(fid,'Overall Event Path:   ');
-    for j=1:size(event_path)
+    event_path_size = size(event_path);
+    for j=1:event_path_size(1)
         fprintf(fid,'%s ',num2str(event_path(j,:)));
     end
     fprintf(fid,'\n');
@@ -1117,3 +1118,4 @@ end
 
 fclose('all');
 disp('All Trials Complete!')
+rosshutdown

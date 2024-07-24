@@ -102,7 +102,7 @@ for k = 1:1
     %end  
      num_eval = num_eval+num_transitions(1); 
     % Calculate the costs to the neighbor nodes and record paths
-    for kk = 1:num_transitions % iterate through the number of transitions
+    for kk = 1:num_transitions(1) % iterate through the number of transitions
       next_state = updateCurEvent(possible_transitions(kk),cur_state,events,states,num_fsms);
 %       prev_index=index;
       index = curStateIndex(trans_mat,next_state);
