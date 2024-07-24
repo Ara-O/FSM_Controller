@@ -36,7 +36,7 @@ while runningScenario <= str2double(scenNumFinish)
 
     
     for i=1:numRobots                              %Setup Each Robot
-        robot{i} = struct;
+        %robot{i} = struct;
         robot{i} = setupRobot(i);   % i-1 because Stage starts with robot_0
         %Movebase fixes
         robot{i}.old_goal_X = 666;
@@ -986,67 +986,58 @@ while runningScenario <= str2double(scenNumFinish)
         
         
         %% Send Goals to MoveBase
-        for i=1:numRobots
-            if ~isempty(goal{i})     % if goal was assigned,
-                robot{i}.goal_msg.Header.FrameId=['/robot' char(i+48) '_tf/odom'];
-                %after possible goal conditioning, extract the Goal
-                robot{i}.goal_msg.Pose.Position.X = goal{i}(1);%goal{i}(2)-init_place{i,2}; % extract X of goal
-                robot{i}.goal_msg.Pose.Position.Y = goal{i}(2);%-goal{i}(1)+init_place{i,1}; % extract Y
-                %         %after possible goal conditioning, extract the Goal
-                %         robot{i}.goal_msg.X = goal{i}(1); % extract X of goal
-                %         robot{i}.goal_msg.Y = goal{i}(2); % extract Y
-                % check if goal is changed so MoveBase doesn't get overloaded
-                if (robot{i}.goal_msg.Pose.Position.X ~= robot{i}.old_goal_X)...
-                        || (robot{i}.goal_msg.Pose.Position.Y ~= robot{i}.old_goal_Y)...
-                        || (goal_need_resend(i)==1)
-                    robot{i}.goal_msg.Pose.Orientation.W = 1.0; % set direction
+        for i = 1:numRobots
+            if ~isempty(goal{i})  % if goal was assigned,
+                robot{i}.goal_msg.header.frame_id = 'map';
+                currentTime = ros2message('builtin_interfaces/Time');  % Create a new Time message
+                currentTime.sec = int32(floor(posixtime(datetime('now')))); % Current seconds since epoch
+                currentTime.nanosec = uint32(mod(floor(posixtime(datetime('now')) * 1e9), 1e9)); % Nanoseconds
+        
+                robot{i}.goal_msg.header.stamp = currentTime; % Set the timestamp% Set to current time
+                % After possible goal conditioning, extract the Goal
+                robot{i}.goal_msg.pose.position.x = goal{i}(1); % extract X of goal
+                robot{i}.goal_msg.pose.position.y = goal{i}(2); % extract Y
+                if (robot{i}.goal_msg.pose.position.x ~= robot{i}.old_goal_X) ...
+                        || (robot{i}.goal_msg.pose.position.y ~= robot{i}.old_goal_Y) ...
+                        || (goal_need_resend(i) == 1)
+                    robot{i}.goal_msg.pose.orientation.w = 1.0; % set direction
                     goal_need_resend(i) = 0; % Goal has changed, so we may need to replan
-                    send(robot{i}.goal_pub,robot{i}.goal_msg) % Publish Goals
-                    robot{i}.old_goal_X = robot{i}.goal_msg.Pose.Position.X;
-                    robot{i}.old_goal_Y = robot{i}.goal_msg.Pose.Position.Y;
-                    %         % check if goal is changed so MoveBase doesn't get overloaded
-                    %         if (robot{i}.goal_msg.X ~= robot{i}.old_goal_X)...
-                    %             || (robot{i}.goal_msg.Y ~= robot{i}.old_goal_Y)...
-                    %             || (goal_need_resend(i)==1)
-                    %           robot{i}.goal_msg.Z = 1.0; % set direction
-                    %           goal_need_resend(i) = 0; % Goal has changed, so we may need to replan
-                    %           send(robot{i}.goal_pub,robot{i}.goal_msg) % Publish Goals
-                    %           robot{i}.old_goal_X = robot{i}.goal_msg.X;
-                    %           robot{i}.old_goal_Y = robot{i}.goal_msg.Y;
+                    
+                    send(robot{i}.goal_pub, robot{i}.goal_msg); % Publish Goals
+                    robot{i}.old_goal_X = robot{i}.goal_msg.pose.position.x;
+                    robot{i}.old_goal_Y = robot{i}.goal_msg.pose.position.y;
                 end
             end
         end
-        
         
         
         %% Update locations each loop
-        for i=1:numRobots
-            robot{i} = updateLocations(robot{i});
-            robot_current_location_x(i) = robot{i}.X;
-            robot_current_location_y(i) = robot{i}.Y;
-            
-            % Since Move Base needs time to register that the robot has reached the
-            % goal, we need to add a delay to the goal sending so Movebase has time
-            % to replan.
-            if(robot_previous_location_x(i) == robot_current_location_x(i))...
-                    && (robot_previous_location_y(i) == robot_current_location_y(i))
-                robot_change_count(i) = robot_change_count(i) +1;
-                if robot_change_count(i) > 1000 % wait until new goal is sent or sent again
-                    % Should be made a timer...
-                    goal_need_resend(i) = 1;
-                    %robot{i}.calc_region = true;
-                    robot_change_count(i) = 0;
-                end
-            else
+      for i = 1:numRobots
+        robot{i} = updateLocations(robot{i});
+        robot_current_location_x(i) = robot{i}.X;
+        robot_current_location_y(i) = robot{i}.Y;
+        
+        % Since Move Base needs time to register that the robot has reached the
+        % goal, we need to add a delay to the goal sending so Movebase has time
+        % to replan.
+        if (robot_previous_location_x(i) == robot_current_location_x(i)) ...
+                && (robot_previous_location_y(i) == robot_current_location_y(i))
+            robot_change_count(i) = robot_change_count(i) + 1;
+            if robot_change_count(i) > 1000 % wait until new goal is sent or sent again
+                goal_need_resend(i) = 1;
                 robot_change_count(i) = 0;
             end
-            
-            robot_previous_location_x(i) = robot{i}.X; %Save location for next loop
-            robot_previous_location_y(i) = robot{i}.Y;
-            start_loc(i,1) = robot{i}.X;
-            start_loc(i,2) = robot{i}.Y;
+        else
+            robot_change_count(i) = 0;
         end
         
+        robot_previous_location_x(i) = robot{i}.X; % Save location for next loop
+        robot_previous_location_y(i) = robot{i}.Y;
+        start_loc(i,1) = robot{i}.X;
+        start_loc(i,2) = robot{i}.Y;
+    end
+        
+        % Update locations each loop
     end
     %% Display current state
     disp('Done!')
