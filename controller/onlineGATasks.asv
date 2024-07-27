@@ -14,7 +14,7 @@ mutRate=1;%table_minitab{i_t,7};
 
 run(['../FSMs/' ABSfoldName '/userdata' num2str(runningScenario) '.m'])       %Import userdata from FSM GUI
 run(['../FSMs/' ABSfoldName '/' fsm '.m'])       %Import FSM data from FSM GUI
-run(['../FSMs/' ABSfoldName '/fsmdataIncremental.m'])   
+run(['../FSMs/' ABSfoldName '/''.m'])   
 %run(['../FSMs/' foldName '/' fsmInc '.m' ])
 
 EEC = 0;
