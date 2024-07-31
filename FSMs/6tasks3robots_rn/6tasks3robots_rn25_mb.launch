@@ -1,0 +1,116 @@
+<!-- This launch file was automatically generated -->        
+
+<launch>                                                       
+  <param name="/use_sim_time" value="true"/>                 
+
+<!-- Open the world -->                                        
+  <node pkg="stage_ros" type="stageros" name="IGVC_stage" args="$(find fsm_controller)/FSMs/6tasks3robots_rn/6tasks3robots_rn25.world" output="screen">
+     <!--for each robot, we need to change base_scan to scan             --> 
+     <!-- for each robot, we need to change cmd_vel to move_base/cmd_vel --> 
+  <remap from="/robot_0/base_scan" to="/robot_0/scan" />            
+  <remap from="/robot_0/cmd_vel" to="/robot_0/move_base/cmd_vel" /> 
+  <remap from="/robot_1/base_scan" to="/robot_1/scan" />            
+  <remap from="/robot_1/cmd_vel" to="/robot_1/move_base/cmd_vel" /> 
+  <remap from="/robot_2/base_scan" to="/robot_2/scan" />            
+  <remap from="/robot_2/cmd_vel" to="/robot_2/move_base/cmd_vel" /> 
+  </node>                                                    
+
+<!-- Start move_base for each robot -->                        
+<!-- Each group declare one robot   -->                        
+ <group ns = "robot_0">                                    
+  <param name="tf_prefix" value="robot_0" />                
+  <arg name="no_static_map" default="true"/>                 
+  <arg name="base_global_planner" default="navfn/NavfnROS"/> 
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/> 
+                                                             
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" > <!-- Change node name--> 
+                                                             
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>         
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>           
+    <rosparam file="$(find husky_navigation)/config/planner.yaml" command="load"/> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="local_costmap" /> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_local.yaml" command="load" ns="local_costmap" />  
+    <param name="local_costmap/width" value="10.0"/>          
+    <param name="local_costmap/height" value="10.0"/>         
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>    
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/> 
+    <param name="global_costmap/width" value="200.0" if="$(arg no_static_map)"/>  
+    <param name="global_costmap/height" value="200.0" if="$(arg no_static_map)"/> 
+                                                             
+    <remap from="cmd_vel" to="~cmd_vel" />                   
+  </node>                                                   
+ </group>                                                   
+
+ <group ns = "robot_1">                                    
+  <param name="tf_prefix" value="robot_1" />                
+  <arg name="no_static_map" default="true"/>                 
+  <arg name="base_global_planner" default="navfn/NavfnROS"/> 
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/> 
+                                                             
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" > <!-- Change node name--> 
+                                                             
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>         
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>           
+    <rosparam file="$(find husky_navigation)/config/planner.yaml" command="load"/> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="local_costmap" /> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_local.yaml" command="load" ns="local_costmap" />  
+    <param name="local_costmap/width" value="10.0"/>          
+    <param name="local_costmap/height" value="10.0"/>         
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>    
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/> 
+    <param name="global_costmap/width" value="200.0" if="$(arg no_static_map)"/>  
+    <param name="global_costmap/height" value="200.0" if="$(arg no_static_map)"/> 
+                                                             
+    <remap from="cmd_vel" to="~cmd_vel" />                   
+  </node>                                                   
+ </group>                                                   
+
+ <group ns = "robot_2">                                    
+  <param name="tf_prefix" value="robot_2" />                
+  <arg name="no_static_map" default="true"/>                 
+  <arg name="base_global_planner" default="navfn/NavfnROS"/> 
+  <arg name="base_local_planner" default="dwa_local_planner/DWAPlannerROS"/> 
+                                                             
+  <node pkg="move_base" type="move_base" respawn="false" name="move_base" output="screen" > <!-- Change node name--> 
+                                                             
+    <param name="base_global_planner" value="$(arg base_global_planner)"/>         
+    <param name="base_local_planner" value="$(arg base_local_planner)"/>           
+    <rosparam file="$(find husky_navigation)/config/planner.yaml" command="load"/> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="global_costmap" />
+    <rosparam file="$(find husky_navigation)/config/costmap_common.yaml" command="load" ns="local_costmap" /> 
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_local.yaml" command="load" ns="local_costmap" />  
+    <param name="local_costmap/width" value="10.0"/>          
+    <param name="local_costmap/height" value="10.0"/>         
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_static.yaml" command="load" ns="global_costmap" unless="$(arg no_static_map)"/>    
+                                                             
+    <rosparam file="$(find husky_navigation)/config/costmap_global_laser.yaml" command="load" ns="global_costmap" if="$(arg no_static_map)"/> 
+    <param name="global_costmap/width" value="200.0" if="$(arg no_static_map)"/>  
+    <param name="global_costmap/height" value="200.0" if="$(arg no_static_map)"/> 
+                                                             
+    <remap from="cmd_vel" to="~cmd_vel" />                   
+  </node>                                                   
+ </group>                                                   
+
+                                                               
+<!-- open movebasegoal for each robot  -->                     
+  <node pkg="simple_navigation_goals" type="matgoal_movebasegoal_0" name="matgoalTOmovebasegoal_0"  output="screen" ns = "robot_0">  
+  </node>                                                      
+  <node pkg="simple_navigation_goals" type="matgoal_movebasegoal_1" name="matgoalTOmovebasegoal_1"  output="screen" ns = "robot_1">  
+  </node>                                                      
+  <node pkg="simple_navigation_goals" type="matgoal_movebasegoal_2" name="matgoalTOmovebasegoal_2"  output="screen" ns = "robot_2">  
+  </node>                                                      
+                                                               
+</launch>                                                      

@@ -1,0 +1,162 @@
+# ##### This world file was automatically generated #####    
+
+include "include/stage_igvc_obstacles.inc"                     
+include "include/stage_igvc_waypoints.inc"                     
+include "include/husky_camera.inc"                               
+                                                               
+# set the resolution of the underlying raytrace model in meters
+resolution 0.02                                                
+                                                               
+threads 4       # Multi-core Processing!                         
+interval_sim 100  # simulation timestep in milliseconds        
+                                                               
+window                                                         
+(                                                              
+  size [ 1000.000 2000.000 ]                                   
+  rotate [ 0.000 0.000 ]                                       
+  scale 13                                                     
+)                                                              
+                                                               
+define map model                                               
+(                                                              
+  color "purple"                                               
+  boundary 1                                                   
+  fiducial_return 0                                            
+  gripper_return 0                                             
+)                                                              
+                                                               
+map                                                            
+(                                                              
+  name "testmap"                                               
+  bitmap "include/wall2.png"	                                 
+  size [75.0 75.0 1.0]                                         
+  pose [ 0.000 0.000 0.000 0.000 ]                             
+)                                                              
+                                 
+                                 
+husky_base(		  
+  name "Robot_0" 
+  pose [ 14.304 16.066 0.000 90.000 ] 
+  localization "gps" 
+  localization_origin [ 0 0 0 0 ] 
+) 
+husky_base(		  
+  name "Robot_1" 
+  pose [ -19.301 -16.166 0.000 90.000 ] 
+  localization "gps" 
+  localization_origin [ 0 0 0 0 ] 
+) 
+husky_base(		  
+  name "Robot_2" 
+  pose [ 12.112 -1.576 0.000 90.000 ] 
+  localization "gps" 
+  localization_origin [ 0 0 0 0 ] 
+) 
+
+waypoint2m ( pose [  -20 -26 0.000 0.000 ]) 
+waypoint2m ( pose [  -13 16 0.000 0.000 ]) 
+waypoint2m ( pose [  20 14 0.000 0.000 ]) 
+waypoint2m ( pose [  -34 24 0.000 0.000 ]) 
+waypoint2m ( pose [  30 19 0.000 0.000 ]) 
+waypoint2m ( pose [  -32 -9 0.000 0.000 ]) 
+
+barrel       ( pose [ 6  -20  0.000 0.000 ] )
+barrel       ( pose [ -24  20  0.000 0.000 ] )
+barrel       ( pose [ 16  27  0.000 0.000 ] )
+barrel       ( pose [ -28  -23  0.000 0.000 ] )
+barrel       ( pose [ -29  -3  0.000 0.000 ] )
+barrel       ( pose [ -23  25  0.000 0.000 ] )
+barrel       ( pose [ -29  -33  0.000 0.000 ] )
+barrel       ( pose [ 2  16  0.000 0.000 ] )
+barrel       ( pose [ -15  -24  0.000 0.000 ] )
+barrel       ( pose [ -13  -21  0.000 0.000 ] )
+barrel       ( pose [ -1  25  0.000 0.000 ] )
+barrel       ( pose [ 7  -29  0.000 0.000 ] )
+barrel       ( pose [ -9  -32  0.000 0.000 ] )
+barrel       ( pose [ -2  -7  0.000 0.000 ] )
+barrel       ( pose [ 31  19  0.000 0.000 ] )
+barrel       ( pose [ -3  24  0.000 0.000 ] )
+barrel       ( pose [ -26  -9  0.000 0.000 ] )
+barrel       ( pose [ 27  26  0.000 0.000 ] )
+barrel       ( pose [ 12  6  0.000 0.000 ] )
+barrel       ( pose [ -12  27  0.000 0.000 ] )
+barrel       ( pose [ -27  13  0.000 0.000 ] )
+barrel       ( pose [ 8  20  0.000 0.000 ] )
+barrel       ( pose [ -9  15  0.000 0.000 ] )
+barrel       ( pose [ 20  -14  0.000 0.000 ] )
+barrel       ( pose [ 2  30  0.000 0.000 ] )
+barrel       ( pose [ 1  -13  0.000 0.000 ] )
+barrel       ( pose [ 6  -11  0.000 0.000 ] )
+barrel       ( pose [ 15  -8  0.000 0.000 ] )
+barrel       ( pose [ -3  11  0.000 0.000 ] )
+barrel       ( pose [ 30  -14  0.000 0.000 ] )
+barrel       ( pose [ 24  26  0.000 0.000 ] )
+barrel       ( pose [ 28  -33  0.000 0.000 ] )
+barrel       ( pose [ -12  9  0.000 0.000 ] )
+barrel       ( pose [ -17  -20  0.000 0.000 ] )
+barrel       ( pose [ 12  6  0.000 0.000 ] )
+barrel       ( pose [ 4  9  0.000 0.000 ] )
+barrel       ( pose [ -32  -12  0.000 0.000 ] )
+barrel       ( pose [ -5  -19  0.000 0.000 ] )
+barrel       ( pose [ 12  22  0.000 0.000 ] )
+barrel       ( pose [ -17  13  0.000 0.000 ] )
+barrel       ( pose [ -26  21  0.000 0.000 ] )
+barrel       ( pose [ -26  4  0.000 0.000 ] )
+barrel       ( pose [ -11  19  0.000 0.000 ] )
+barrel       ( pose [ -2  -3  0.000 0.000 ] )
+barrel       ( pose [ 23  -12  0.000 0.000 ] )
+barrel       ( pose [ -5  29  0.000 0.000 ] )
+barrel       ( pose [ -33  30  0.000 0.000 ] )
+barrel       ( pose [ -23  9  0.000 0.000 ] )
+barrel       ( pose [ 4  10  0.000 0.000 ] )
+barrel       ( pose [ -11  6  0.000 0.000 ] )
+barrel       ( pose [ 19  -34  0.000 0.000 ] )
+barrel       ( pose [ -30  30  0.000 0.000 ] )
+barrel       ( pose [ 8  -20  0.000 0.000 ] )
+barrel       ( pose [ -8  -27  0.000 0.000 ] )
+barrel       ( pose [ -18  -18  0.000 0.000 ] )
+barrel       ( pose [ -13  -25  0.000 0.000 ] )
+barrel       ( pose [ -12  -27  0.000 0.000 ] )
+barrel       ( pose [ 24  -29  0.000 0.000 ] )
+barrel       ( pose [ 27  -9  0.000 0.000 ] )
+barrel       ( pose [ -32  -13  0.000 0.000 ] )
+barrel       ( pose [ 14  18  0.000 0.000 ] )
+barrel       ( pose [ 1  10  0.000 0.000 ] )
+barrel       ( pose [ 24  -32  0.000 0.000 ] )
+barrel       ( pose [ -15  -32  0.000 0.000 ] )
+barrel       ( pose [ -22  13  0.000 0.000 ] )
+barrel       ( pose [ 13  23  0.000 0.000 ] )
+barrel       ( pose [ 4  -31  0.000 0.000 ] )
+barrel       ( pose [ 26  18  0.000 0.000 ] )
+barrel       ( pose [ -16  1  0.000 0.000 ] )
+barrel       ( pose [ 30  12  0.000 0.000 ] )
+barrel       ( pose [ 21  -6  0.000 0.000 ] )
+barrel       ( pose [ -4  2  0.000 0.000 ] )
+barrel       ( pose [ -17  15  0.000 0.000 ] )
+barrel       ( pose [ -2  8  0.000 0.000 ] )
+barrel       ( pose [ -15  -26  0.000 0.000 ] )
+barrel       ( pose [ -4  -11  0.000 0.000 ] )
+barrel       ( pose [ 17  17  0.000 0.000 ] )
+barrel       ( pose [ 9  -27  0.000 0.000 ] )
+barrel       ( pose [ -34  2  0.000 0.000 ] )
+barrel       ( pose [ -15  27  0.000 0.000 ] )
+barrel       ( pose [ 30  -16  0.000 0.000 ] )
+barrel       ( pose [ 18  25  0.000 0.000 ] )
+barrel       ( pose [ 5  24  0.000 0.000 ] )
+barrel       ( pose [ 28  1  0.000 0.000 ] )
+barrel       ( pose [ 13  3  0.000 0.000 ] )
+barrel       ( pose [ -34  -6  0.000 0.000 ] )
+barrel       ( pose [ 8  -1  0.000 0.000 ] )
+barrel       ( pose [ -11  27  0.000 0.000 ] )
+barrel       ( pose [ 20  21  0.000 0.000 ] )
+barrel       ( pose [ -11  4  0.000 0.000 ] )
+barrel       ( pose [ 23  27  0.000 0.000 ] )
+barrel       ( pose [ 9  -22  0.000 0.000 ] )
+barrel       ( pose [ 8  -31  0.000 0.000 ] )
+barrel       ( pose [ -8  9  0.000 0.000 ] )
+barrel       ( pose [ 27  19  0.000 0.000 ] )
+barrel       ( pose [ -3  15  0.000 0.000 ] )
+barrel       ( pose [ -8  30  0.000 0.000 ] )
+barrel       ( pose [ 31  22  0.000 0.000 ] )
+barrel       ( pose [ -9  -5  0.000 0.000 ] )
+barrel       ( pose [ -19  17  0.000 0.000 ] )

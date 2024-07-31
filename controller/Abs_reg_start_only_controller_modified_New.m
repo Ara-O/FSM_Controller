@@ -393,7 +393,7 @@ while runningScenario <= str2double(scenNumFinish)
                     %          [~,local_state_path] = ...
                     %           localDijkstra(init_cost,edge_list,cur_state,ABS_event_path,ABS_pc,numRobots,states,...
                     %          tasks,EEC,regions,numRegions,start_loc,numTasks,abstracted,start_events_only,robotLocations,robot_tasks);
-                    a=1
+                    a=1;
                     
                     
                     
@@ -403,7 +403,7 @@ while runningScenario <= str2double(scenNumFinish)
                         localDijkstraIncrementalNew(init_cost,cur_states,ABS_event_path,ABS_pc,numRobots,states_incr,events_incr,...
                         tasks,regions,numRegions,robotLocations,numTasks,abstracted,start_events_only,robotLocations,robot_tasks);
                     aux_LD=1;
-                    a=2
+                    a=2;
                     
                     z=z+1;
                     localtime(z) = toc(ldtime);
@@ -569,12 +569,12 @@ while runningScenario <= str2double(scenNumFinish)
                     robotLocations(kk,2) = robot{kk}.Y;
                     robot_tasks{kk} = robot{kk}.cur_task(4:end);                    
                 end
-                a=3
+                a=3;
                 rdtime =tic;
                 [cost_di,local_state_path,local_event_path,num_eval2] = ...
                     robotDijkstraIncrementalNew(init_cost,cur_states,numRobots,states_incr,events_incr,tasks,...
                     regions,numRegions,robotLocations,numTasks,abstracted,start_events_only,robot_tasks); %,robotLocations,robot_tasks
-                a=4
+                a=4;
                 
                 z2=z2+1;
                 

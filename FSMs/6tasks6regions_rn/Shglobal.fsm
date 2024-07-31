@@ -1,0 +1,322 @@
+64
+
+q0	0	6
+a1s	q23	c	o
+a3s	q100	c	o
+a5s	q113,q15	c	o
+b1s	q97	c	o
+b3s	q88	c	o
+b5s	q112,q55	c	o
+
+q1,q125,q87	0	3
+a4s	q121,q17,q45	c	o
+b1s	q12,q25,q32	c	o
+a1s	q103,q4,q5	c	o
+
+q10,q127	0	4
+a1s	q109,q43	c	o
+b4s	q44,q53	c	o
+b6s	q102,q14,q89	c	o
+b1s	q101,q120	c	o
+
+q100	0	5
+a1s	q47	c	o
+a4s	q22	c	o
+a5s	q126,q99	c	o
+b1s	q73	c	o
+b5s	q123,q83	c	o
+
+q101,q120	0	3
+b6s	q19,q39,q92	c	o
+b4s	q48,q85	c	o
+b2s	q93,q116	c	o
+
+q102,q14,q89	0	3
+a1s	q106,q21,q82	c	o
+b4s	q121,q17,q45	c	o
+b1s	q19,q39,q92	c	o
+
+q103,q4,q5	0	2
+a2s	q119,q20,q11	c	o
+a4s	q29,q58,q56	c	o
+
+q105,q35	0	4
+b2s	q27,q62	c	o
+b3s	q114,q77	c	o
+a3s	q118,q31	c	o
+a6s	q108,q54,q75	c	o
+
+q106,q21,q82	0	2
+b4s	q29,q58,q56	c	o
+a2s	q107,q30,q90	c	o
+
+q107,q30,q90	0	1
+b4s	q117,q52,q70	c	o
+
+q108,q54,q75	0	3
+a3s	q12,q25,q32	c	o
+b2s	q24,q26,q57	c	o
+b3s	q19,q39,q92	c	o
+
+q109,q43	0	3
+b4s	q76,q95	c	o
+b6s	q106,q21,q82	c	o
+a2s	q93,q116	c	o
+
+q110,q8	0	2
+b6s	q119,q20,q11	c	o
+a4s	q49,q36	c	o
+
+q112,q55	0	5
+a1s	q37,q40	c	o
+a3s	q123,q83	c	o
+b1s	q115,q6	c	o
+b3s	q10,q127	c	o
+b6s	q41,q61,q78	c	o
+
+q113,q15	0	5
+b1s	q105,q35	c	o
+b3s	q28,q59	c	o
+a1s	q122,q16	c	o
+a3s	q126,q99	c	o
+a6s	q41,q61,q78	c	o
+
+q114,q77	0	3
+a6s	q19,q39,q92	c	o
+b2s	q68,q98	c	o
+b4s	q46,q65	c	o
+
+q115,q6	0	4
+a3s	q2,q33	c	o
+b2s	q18,q69	c	o
+b6s	q108,q54,q75	c	o
+b3s	q101,q120	c	o
+
+q117,q52,q70	1	0
+
+q118,q31	0	3
+a4s	q46,q65	c	o
+a6s	q12,q25,q32	c	o
+b2s	q13,q111	c	o
+
+q119,q20,q11	0	1
+a4s	q117,q52,q70	c	o
+
+q12,q25,q32	0	2
+a4s	q74,q94,q64	c	o
+b2s	q119,q20,q11	c	o
+
+q121,q17,q45	0	2
+a1s	q29,q58,q56	c	o
+b1s	q74,q94,q64	c	o
+
+q122,q16	0	4
+b3s	q63,q84	c	o
+a2s	q27,q62	c	o
+a6s	q38,q67,q86	c	o
+a3s	q7,q104	c	o
+
+q123,q83	0	4
+a1s	q3,q96	c	o
+a4s	q44,q53	c	o
+b1s	q2,q33	c	o
+b6s	q1,q125,q87	c	o
+
+q124	0	3
+a4s	q9	c	o
+b5s	q110,q8	c	o
+a5s	q13,q111	c	o
+
+q126,q99	0	4
+b1s	q118,q31	c	o
+a4s	q71,q81	c	o
+a6s	q1,q125,q87	c	o
+a1s	q7,q104	c	o
+
+q13,q111	0	2
+a6s	q119,q20,q11	c	o
+a4s	q42,q66	c	o
+
+q18,q69	0	3
+a3s	q110,q8	c	o
+b6s	q24,q26,q57	c	o
+b3s	q93,q116	c	o
+
+q19,q39,q92	0	2
+b2s	q107,q30,q90	c	o
+b4s	q74,q94,q64	c	o
+
+q2,q33	0	3
+b2s	q110,q8	c	o
+b6s	q12,q25,q32	c	o
+a4s	q48,q85	c	o
+
+q22	0	4
+a1s	q50	c	o
+a5s	q71,q81	c	o
+b1s	q60	c	o
+b5s	q44,q53	c	o
+
+q23	0	5
+a2s	q51	c	o
+a3s	q47	c	o
+a5s	q122,q16	c	o
+b3s	q72	c	o
+b5s	q37,q40	c	o
+
+q24,q26,q57	0	2
+b3s	q107,q30,q90	c	o
+a3s	q119,q20,q11	c	o
+
+q27,q62	0	3
+a6s	q24,q26,q57	c	o
+b3s	q68,q98	c	o
+a3s	q13,q111	c	o
+
+q28,q59	0	4
+a1s	q63,q84	c	o
+a6s	q102,q14,q89	c	o
+b1s	q114,q77	c	o
+b4s	q71,q81	c	o
+
+q29,q58,q56	0	1
+a2s	q117,q52,q70	c	o
+
+q3,q96	0	3
+a2s	q110,q8	c	o
+a4s	q76,q95	c	o
+b6s	q103,q4,q5	c	o
+
+q37,q40	0	4
+a2s	q18,q69	c	o
+a3s	q3,q96	c	o
+b3s	q109,q43	c	o
+b6s	q38,q67,q86	c	o
+
+q38,q67,q86	0	3
+a2s	q24,q26,q57	c	o
+b3s	q106,q21,q82	c	o
+a3s	q103,q4,q5	c	o
+
+q41,q61,q78	0	4
+a1s	q38,q67,q86	c	o
+a3s	q1,q125,q87	c	o
+b1s	q108,q54,q75	c	o
+b3s	q102,q14,q89	c	o
+
+q42,q66	0	1
+a6s	q117,q52,q70	c	o
+
+q44,q53	0	3
+a1s	q76,q95	c	o
+b6s	q121,q17,q45	c	o
+b1s	q48,q85	c	o
+
+q46,q65	0	2
+b2s	q42,q66	c	o
+a6s	q74,q94,q64	c	o
+
+q47	0	4
+a2s	q124	c	o
+a4s	q50	c	o
+b5s	q3,q96	c	o
+a5s	q7,q104	c	o
+
+q48,q85	0	2
+b2s	q49,q36	c	o
+b6s	q74,q94,q64	c	o
+
+q49,q36	0	1
+b6s	q117,q52,q70	c	o
+
+q50	0	3
+a2s	q9	c	o
+b5s	q76,q95	c	o
+a5s	q91,q34	c	o
+
+q51	0	4
+a3s	q124	c	o
+a5s	q27,q62	c	o
+b3s	q79	c	o
+b5s	q18,q69	c	o
+
+q60	0	3
+a5s	q46,q65	c	o
+b2s	q9	c	o
+b5s	q48,q85	c	o
+
+q63,q84	0	3
+b4s	q91,q34	c	o
+a2s	q68,q98	c	o
+a6s	q106,q21,q82	c	o
+
+q68,q98	0	2
+b4s	q42,q66	c	o
+a6s	q107,q30,q90	c	o
+
+q7,q104	0	3
+a2s	q13,q111	c	o
+a6s	q103,q4,q5	c	o
+a4s	q91,q34	c	o
+
+q71,q81	0	3
+a6s	q121,q17,q45	c	o
+b1s	q46,q65	c	o
+a1s	q91,q34	c	o
+
+q72	0	4
+a2s	q79	c	o
+a5s	q63,q84	c	o
+b4s	q50	c	o
+b5s	q109,q43	c	o
+
+q73	0	4
+a4s	q60	c	o
+a5s	q118,q31	c	o
+b2s	q124	c	o
+b5s	q2,q33	c	o
+
+q74,q94,q64	0	1
+b2s	q117,q52,q70	c	o
+
+q76,q95	0	2
+b6s	q29,q58,q56	c	o
+a2s	q49,q36	c	o
+
+q79	0	3
+a5s	q68,q98	c	o
+b4s	q9	c	o
+b5s	q93,q116	c	o
+
+q80	0	4
+a5s	q114,q77	c	o
+b2s	q79	c	o
+b4s	q60	c	o
+b5s	q101,q120	c	o
+
+q88	0	5
+a1s	q72	c	o
+a5s	q28,q59	c	o
+b1s	q80	c	o
+b4s	q22	c	o
+b5s	q10,q127	c	o
+
+q9	0	2
+a5s	q42,q66	c	o
+b5s	q49,q36	c	o
+
+q91,q34	0	2
+a2s	q42,q66	c	o
+a6s	q29,q58,q56	c	o
+
+q93,q116	0	2
+b6s	q107,q30,q90	c	o
+b4s	q49,q36	c	o
+
+q97	0	5
+a3s	q73	c	o
+a5s	q105,q35	c	o
+b2s	q51	c	o
+b3s	q80	c	o
+b5s	q115,q6	c	o
+
