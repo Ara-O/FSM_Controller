@@ -24,9 +24,9 @@ function robot = setupRobot(num)
     robot.node = ros2node(['robot' char(num+48)]);
     
     % Create ROS 2 subscriber for odometry
-    robot.odom_sub = ros2subscriber(robot.node, robotSubName, 'nav_msgs/Odometry');
+    robot.odom_sub = ros2subscriber(robot.node, robotSubName, 'nav_msgs/Odometry', 'History','keepall');
     
     % Create ROS 2 publisher for goal poses
-    robot.goal_pub = ros2publisher(robot.node, robotPubName, 'geometry_msgs/PoseStamped');
+    robot.goal_pub = ros2publisher(robot.node, robotPubName, 'geometry_msgs/PoseStamped', 'History','keepall', 'Depth',20);
     robot.goal_msg = ros2message(robot.goal_pub);
 end

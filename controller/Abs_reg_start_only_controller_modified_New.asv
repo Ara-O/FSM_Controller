@@ -995,7 +995,7 @@ while runningScenario <= str2double(scenNumFinish)
                 currentTime.sec = int32(floor(posixtime(datetime('now')))); % Current seconds since epoch
                 currentTime.nanosec = uint32(mod(floor(posixtime(datetime('now')) * 1e9), 1e9)); % Nanoseconds
         
-                %robot{i}.goal_msg.header.stamp = currentTime; % Set the timestamp% Set to current time
+                robot{i}.goal_msg.header.stamp = currentTime; % Set the timestamp% Set to current time
                 % After possible goal conditioning, extract the Goal
                 robot{i}.goal_msg.pose.position.x = goal{i}(1); % extract X of goal
                 robot{i}.goal_msg.pose.position.y = goal{i}(2); % extract Y
