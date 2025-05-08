@@ -50,6 +50,7 @@ if fo == -1
   mkdir(['../FSMs/' foldName])
   fo = fopen(['../FSMs/' foldName '/fsmdataIncremental.m'],'w');
 end
+
 fprintf(fo,"<sdf version='1.4'>\n<world name='default'>\n <light name='sun' type='directional'>\n");
 fprintf(fo,"    <cast_shadows>1</cast_shadows>\n");
 fprintf(fo,"      <pose>0 0 10 0 -0 0</pose>\n");

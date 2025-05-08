@@ -119,7 +119,7 @@ if ~isequal(fn,0)
             % set the other textboxes to the same name
             %   set(handles.txtOutputFn, 'String', [fn2 '.m']);
             set(handles.txtWorldFile, 'String', [fn2 '.world']);
-            set(handles.txtLaunchFile, 'String', [fn2 '.launch']);
+            set(handles.txtLaunchFile, 'String', ['launch.py']);
             
             % add file path to Matlab
             addpath(path);
